@@ -30,6 +30,7 @@ import {
   validationError,
 } from "@/lib/api/errors";
 import { trackServerUserEvent } from "@/lib/analytics/user-events-server";
+import { GENERATE_ERROR_CODE } from "@/lib/generation/recovery";
 
 const requestSchema = z.object({
   mode: z.enum(["text", "lyrics"]).default("text"),
@@ -73,7 +74,13 @@ export async function POST(request: NextRequest) {
     } = await supabase.auth.getUser();
 
     if (authError || !user) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+      return NextResponse.json(
+        {
+          error: "Unauthorized",
+          code: GENERATE_ERROR_CODE.unauthorized,
+        },
+        { status: 401 },
+      );
     }
 
     userId = user.id;
@@ -128,6 +135,20 @@ export async function POST(request: NextRequest) {
       return invalidRequest(["lyrics: Must be at least 20 characters"]);
     }
 
+    const entitlements = await getUserEntitlements(user.id);
+    if (
+      process.env.SKIP_CREDIT_CHECK !== "true" &&
+      entitlements.creditsBalance < creditCost
+    ) {
+      return NextResponse.json(
+        {
+          error: "Insufficient credits",
+          code: GENERATE_ERROR_CODE.insufficientCredits,
+        },
+        { status: 402 },
+      );
+    }
+
     logInfo("song_generate_start", {
       request_id: requestId,
       user_id: user.id,
@@ -169,7 +190,6 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const entitlements = await getUserEntitlements(user.id);
     const credit = await freezeAudioGenerationCredit({
       supabase,
       userId: user.id,
@@ -182,7 +202,10 @@ export async function POST(request: NextRequest) {
 
     if (!credit.enough) {
       return NextResponse.json(
-        { error: "Insufficient credits" },
+        {
+          error: "Insufficient credits",
+          code: GENERATE_ERROR_CODE.insufficientCredits,
+        },
         { status: 402 },
       );
     }
@@ -325,7 +348,11 @@ export async function POST(request: NextRequest) {
       ...client,
     });
     return NextResponse.json(
-      { error: "Generation failed", request_id: requestId },
+      {
+        error: "Generation failed",
+        code: GENERATE_ERROR_CODE.generationFailed,
+        request_id: requestId,
+      },
       { status: 500 },
     );
   }

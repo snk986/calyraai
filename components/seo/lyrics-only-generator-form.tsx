@@ -1,6 +1,6 @@
 "use client";
 
-import { type FormEvent, useState } from "react";
+import { type FormEvent, useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ArrowRight, FileText, Loader2 } from "lucide-react";
@@ -12,9 +12,11 @@ import {
 } from "@/components/create/action-needed-dialog";
 import { defaultLocale, type Locale } from "@/i18n/routing";
 import { trackFunnelEvent } from "@/lib/analytics/funnel-client";
+import { isInsufficientCreditsError } from "@/lib/generation/recovery";
 import type { StyleParams } from "@/types/song";
 
 const PENDING_SONG_STORAGE_PREFIX = "calyra:pendingSong:";
+const PENDING_LYRICS_DRAFT_PREFIX = "calyra:pendingLyricsDraft:";
 const STYLE_PRESETS = [
   "Pop ballad, emotional, memorable chorus",
   "Rap, confident, punchy hook",
@@ -59,6 +61,11 @@ function localePrefix(locale: string) {
   return locale === defaultLocale ? "" : `/${locale}`;
 }
 
+function getDraftKey() {
+  if (typeof window === "undefined") return null;
+  return `${PENDING_LYRICS_DRAFT_PREFIX}${window.location.pathname}`;
+}
+
 export function LyricsOnlyGeneratorForm({
   labels,
 }: LyricsOnlyGeneratorFormProps) {
@@ -75,9 +82,44 @@ export function LyricsOnlyGeneratorForm({
   const [isGeneratingSong, setIsGeneratingSong] = useState(false);
   const [errorAction, setErrorAction] = useState<ActionNeededType | null>(null);
 
-  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
+  const saveDraft = () => {
+    const key = getDraftKey();
+    if (!key) return;
+    window.sessionStorage.setItem(
+      key,
+      JSON.stringify({ prompt, style, title, result }),
+    );
+  };
 
+  const clearDraft = () => {
+    const key = getDraftKey();
+    if (!key) return;
+    window.sessionStorage.removeItem(key);
+  };
+
+  useEffect(() => {
+    const key = getDraftKey();
+    if (!key) return;
+    const raw = window.sessionStorage.getItem(key);
+    if (!raw) return;
+    window.sessionStorage.removeItem(key);
+    try {
+      const draft = JSON.parse(raw) as {
+        prompt?: string;
+        style?: string;
+        title?: string;
+        result?: LyricsResponse;
+      };
+      if (typeof draft.prompt === "string") setPrompt(draft.prompt);
+      if (typeof draft.style === "string") setStyle(draft.style);
+      if (typeof draft.title === "string") setTitle(draft.title);
+      if (draft.result?.lyrics) setResult(draft.result);
+    } catch {
+      window.sessionStorage.removeItem(key);
+    }
+  }, []);
+
+  const generateLyrics = async () => {
     setIsSubmitting(true);
     setNeedsSignIn(false);
     setErrorAction(null);
@@ -104,6 +146,7 @@ export function LyricsOnlyGeneratorForm({
       const data = (await response.json()) as LyricsResponse;
 
       if (response.status === 401) {
+        saveDraft();
         setNeedsSignIn(true);
         return;
       }
@@ -113,12 +156,17 @@ export function LyricsOnlyGeneratorForm({
       }
 
       setResult(data);
-    } catch (caught) {
-      setError(caught instanceof Error ? caught.message : labels.errorFallback);
+    } catch {
+      setError(labels.errorFallback);
       setErrorAction("error");
     } finally {
       setIsSubmitting(false);
     }
+  };
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    void generateLyrics();
   };
 
   const handleGenerateSong = async () => {
@@ -152,19 +200,24 @@ export function LyricsOnlyGeneratorForm({
           locale,
         }),
       });
-      const data = (await response.json()) as {
+      const data = (await response
+        .json()
+        .catch(() => ({}))) as {
         songId?: string;
         error?: string;
+        code?: string;
       };
 
       if (response.status === 401) {
         trackFunnelEvent("generate_auth_required", analyticsContext);
+        saveDraft();
         setErrorAction("sign-in");
         return;
       }
 
-      if (response.status === 402) {
+      if (isInsufficientCreditsError(response.status, data)) {
         trackFunnelEvent("generate_credit_required", analyticsContext);
+        saveDraft();
         setErrorAction("pricing");
         return;
       }
@@ -174,6 +227,7 @@ export function LyricsOnlyGeneratorForm({
       }
 
       trackFunnelEvent("generate_success", analyticsContext);
+      clearDraft();
       const nextPath = `${prefix}/ai-lyrics-to-song`;
       const pendingSongPath = new URL(nextPath, window.location.origin)
         .pathname;
@@ -182,12 +236,13 @@ export function LyricsOnlyGeneratorForm({
         data.songId,
       );
       router.push(nextPath);
-    } catch (caught) {
+    } catch {
       trackFunnelEvent("generate_failed", {
         ...analyticsContext,
         status_code: 0,
       });
-      setError(caught instanceof Error ? caught.message : labels.errorFallback);
+      saveDraft();
+      setError(labels.errorFallback);
       setErrorAction("error");
     } finally {
       setIsGeneratingSong(false);
@@ -200,6 +255,15 @@ export function LyricsOnlyGeneratorForm({
         action={errorAction}
         localePrefix={prefix}
         errorMessage={error}
+        onRetry={() => {
+          setErrorAction(null);
+          setError(null);
+          if (result) {
+            void handleGenerateSong();
+          } else {
+            void generateLyrics();
+          }
+        }}
         onClose={() => {
           setErrorAction(null);
           setError(null);

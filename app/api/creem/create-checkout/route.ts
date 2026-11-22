@@ -12,10 +12,12 @@ import {
   logInfo,
 } from "@/lib/observability/log";
 import { invalidJsonRequest, validationError } from "@/lib/api/errors";
+import { safeRedirectPath } from "@/lib/generation/recovery";
 
 const requestSchema = z
   .object({
     tierId: z.string().trim().min(1),
+    redirectTo: z.string().trim().max(512).optional(),
   })
   .strict();
 
@@ -124,9 +126,13 @@ export async function POST(request: Request) {
     });
 
     const origin = request.headers.get("origin") ?? process.env.BASE_URL ?? "";
-    const successUrl =
-      process.env.CREEM_SUCCESS_URL ||
-      `${origin}${locale === "en" ? "" : `/${locale}`}/ai-song-maker?upgraded=true`;
+    const defaultSuccessPath = `${locale === "en" ? "" : `/${locale}`}/ai-song-maker`;
+    const explicitReturnPath = safeRedirectPath(body.data.redirectTo);
+    const upgradedSuffix = "?upgraded=true";
+    const successUrl = explicitReturnPath
+      ? `${origin}${explicitReturnPath}${explicitReturnPath.includes("?") ? "&upgraded=true" : upgradedSuffix}`
+      : process.env.CREEM_SUCCESS_URL ||
+        `${origin}${defaultSuccessPath}${upgradedSuffix}`;
 
     const checkout = await creem.checkouts.create({
       productId: tier.productId,

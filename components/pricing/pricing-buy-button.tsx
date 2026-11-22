@@ -54,7 +54,12 @@ export function PricingBuyButton({
         : await fetch("/api/creem/create-checkout", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ tierId }),
+            body: JSON.stringify({
+              tierId,
+              redirectTo:
+                new URLSearchParams(window.location.search).get("redirectTo") ??
+                undefined,
+            }),
           });
 
       if (!response.ok) {

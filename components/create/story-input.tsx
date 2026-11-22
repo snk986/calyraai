@@ -14,6 +14,7 @@ import {
 } from "@/components/create/action-needed-dialog";
 import { SongDownloadButton } from "@/components/song/song-download-button";
 import { trackFunnelEvent } from "@/lib/analytics/funnel-client";
+import { isInsufficientCreditsError } from "@/lib/generation/recovery";
 
 interface StoryInputProps {
   recallCampaign?: string | null;
@@ -458,14 +459,24 @@ export function StoryInput({
       .sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1));
   }, [filter, search, workspaceSongs]);
 
-  const restorePendingDraft = () => {
+  const restorePendingDraft = (autoSubmit = true) => {
     if (typeof window === "undefined") {
       return;
     }
 
     window.sessionStorage.setItem(
       `${PENDING_DRAFT_STORAGE_PREFIX}${window.location.pathname}`,
-      JSON.stringify({ prompt, style, title, autoSubmit: true }),
+      JSON.stringify({ prompt, style, title, autoSubmit }),
+    );
+  };
+
+  const clearPendingDraft = () => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    window.sessionStorage.removeItem(
+      `${PENDING_DRAFT_STORAGE_PREFIX}${window.location.pathname}`,
     );
   };
 
@@ -513,22 +524,26 @@ export function StoryInput({
         return;
       }
 
-      if (response.status === 402) {
+      const data = (await response
+        .json()
+        .catch(() => ({}))) as GenerationCreateResponse & {
+        error?: string;
+        code?: string;
+      };
+
+      if (isInsufficientCreditsError(response.status, data)) {
         trackFunnelEvent("generate_credit_required", analyticsContext);
         restorePendingDraft();
         setErrorAction("pricing");
         return;
       }
 
-      const data = (await response.json()) as GenerationCreateResponse & {
-        error?: string;
-      };
-
       if (!response.ok) {
         throw new Error(data.error ?? "Generation failed");
       }
 
       trackFunnelEvent("generate_success", analyticsContext);
+      clearPendingDraft();
 
       const optimistic: WorkspaceSongItem = {
         id: data.songId,
@@ -547,14 +562,13 @@ export function StoryInput({
         optimistic,
         ...current.filter((song) => song.id !== optimistic.id),
       ]);
-    } catch (caught) {
+    } catch {
       trackFunnelEvent("generate_failed", {
         ...analyticsContext,
         status_code: 0,
       });
-      setGenerationError(
-        caught instanceof Error ? caught.message : t("generationFailed"),
-      );
+      restorePendingDraft(false);
+      setGenerationError(null);
       setErrorAction("error");
     } finally {
       setIsSubmitting(false);
@@ -664,6 +678,11 @@ export function StoryInput({
         action={errorAction}
         localePrefix={localePrefix}
         errorMessage={generationError}
+        onRetry={() => {
+          setErrorAction(null);
+          setGenerationError(null);
+          void submitGeneration();
+        }}
         onClose={() => {
           setErrorAction(null);
           setGenerationError(null);
