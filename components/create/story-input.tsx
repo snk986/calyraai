@@ -458,6 +458,17 @@ export function StoryInput({
       .sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1));
   }, [filter, search, workspaceSongs]);
 
+  const restorePendingDraft = () => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    window.sessionStorage.setItem(
+      `${PENDING_DRAFT_STORAGE_PREFIX}${window.location.pathname}`,
+      JSON.stringify({ prompt, style, title, autoSubmit: true }),
+    );
+  };
+
   const submitGeneration = async () => {
     const trimmedPrompt = prompt.trim();
     const analyticsContext = {
@@ -497,12 +508,14 @@ export function StoryInput({
 
       if (response.status === 401) {
         trackFunnelEvent("generate_auth_required", analyticsContext);
+        restorePendingDraft();
         setErrorAction("sign-in");
         return;
       }
 
       if (response.status === 402) {
         trackFunnelEvent("generate_credit_required", analyticsContext);
+        restorePendingDraft();
         setErrorAction("pricing");
         return;
       }

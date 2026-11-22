@@ -1,6 +1,7 @@
 import { createClient } from "@/utils/supabase/server";
 import { ensureCustomerInitialized } from "@/lib/auth/ensure-customer-initialized";
 import { trackServerUserEvent } from "@/lib/analytics/user-events-server";
+import { SEO_TOOL_PAGE_PATHS } from "@/config/seo-pages";
 import { NextResponse } from "next/server";
 
 export async function GET(request: Request) {
@@ -10,7 +11,13 @@ export async function GET(request: Request) {
   const requestUrl = new URL(request.url);
   const code = requestUrl.searchParams.get("code");
   const origin = requestUrl.origin;
-  const redirectTo = requestUrl.searchParams.get("redirect_to")?.toString();
+  const redirectToParam = requestUrl.searchParams.get("redirect_to");
+  const redirectTo =
+    redirectToParam &&
+    redirectToParam.startsWith("/") &&
+    !redirectToParam.startsWith("//")
+      ? redirectToParam
+      : null;
 
   if (code) {
     const supabase = await createClient();
@@ -30,7 +37,7 @@ export async function GET(request: Request) {
         userId: user.id,
         eventName: "auth_callback_completed",
         properties: {
-          route: redirectTo ?? "/",
+          route: redirectTo ?? SEO_TOOL_PAGE_PATHS.aiTextToSong,
         },
         pathname: "/auth/callback",
       });
@@ -42,5 +49,5 @@ export async function GET(request: Request) {
   }
 
   // URL to redirect to after auth callback completes without explicit redirect target.
-  return NextResponse.redirect(`${origin}/`);
+  return NextResponse.redirect(`${origin}${SEO_TOOL_PAGE_PATHS.aiTextToSong}`);
 }

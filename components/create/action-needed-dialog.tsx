@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import {
@@ -26,6 +27,8 @@ export function ActionNeededDialog({
   errorMessage?: string | null;
 }) {
   const t = useTranslations("create.songMaker");
+  const pathname = usePathname();
+  const encodedRedirectTo = encodeURIComponent(pathname ?? "/");
   const title =
     action === "error" ? t("generationFailed") : t("actionNeededTitle");
   const description =
@@ -61,8 +64,8 @@ export function ActionNeededDialog({
               <Link
                 href={
                   action === "sign-in"
-                    ? `${localePrefix}/sign-in`
-                    : `${localePrefix}/pricing`
+                    ? `${localePrefix}/sign-in?redirectTo=${encodedRedirectTo}`
+                    : `${localePrefix}/pricing?redirectTo=${encodedRedirectTo}`
                 }
               >
                 {action === "sign-in" ? t("signInCta") : t("topUpCreditsCta")}

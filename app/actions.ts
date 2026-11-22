@@ -10,6 +10,7 @@ import { mapAuthErrorToKey } from "@/lib/auth/error-map";
 import { baseUrl } from "@/lib/i18n/urls";
 import { trackServerFunnelEvent } from "@/lib/analytics/funnel-server";
 import { trackServerUserEvent } from "@/lib/analytics/user-events-server";
+import { SEO_TOOL_PAGE_PATHS } from "@/config/seo-pages";
 
 function localePrefix(locale: Locale) {
   return locale === defaultLocale ? "" : `/${locale}`;
@@ -22,6 +23,10 @@ function getLocale(formData: FormData) {
 
 function localizedPath(locale: Locale, path: string) {
   return `${localePrefix(locale)}${path}`;
+}
+
+function defaultAuthRedirect(locale: Locale) {
+  return localizedPath(locale, SEO_TOOL_PAGE_PATHS.aiTextToSong);
 }
 
 function safeRedirectPath(value: FormDataEntryValue | null) {
@@ -38,11 +43,14 @@ export const signUpAction = async (formData: FormData) => {
   const email = formData.get("email")?.toString();
   const password = formData.get("password")?.toString();
   const locale = getLocale(formData);
+  const redirectTo = safeRedirectPath(formData.get("redirectTo"));
   const supabase = await createClient();
   const requestHeaders = await headers();
   const origin = requestHeaders.get("origin") ?? baseUrl;
-  const signUpPath = localizedPath(locale, "/sign-up");
-  const homePath = localizedPath(locale, "/");
+  const signUpPath = redirectTo
+    ? `${localizedPath(locale, "/sign-up")}?redirectTo=${encodeURIComponent(redirectTo)}`
+    : localizedPath(locale, "/sign-up");
+  const destination = redirectTo ?? defaultAuthRedirect(locale);
 
   if (!email || !password) {
     return encodedRedirect(
@@ -56,7 +64,7 @@ export const signUpAction = async (formData: FormData) => {
     email,
     password,
     options: {
-      emailRedirectTo: `${origin}/auth/callback?redirect_to=${encodeURIComponent(homePath)}`,
+      emailRedirectTo: `${origin}/auth/callback?redirect_to=${encodeURIComponent(destination)}`,
     },
   });
 
@@ -75,7 +83,11 @@ export const signUpAction = async (formData: FormData) => {
       properties: { locale, method: "email" },
       pathname: signUpPath,
     });
-    return encodedRedirect("success", homePath, "Thanks for signing up!");
+    return encodedRedirect(
+      "success",
+      data.session ? destination : signUpPath,
+      "Thanks for signing up!",
+    );
   }
 };
 
@@ -115,7 +127,7 @@ export const signInAction = async (formData: FormData) => {
     });
   }
 
-  return redirect(redirectTo ?? localizedPath(locale, "/"));
+  return redirect(redirectTo ?? defaultAuthRedirect(locale));
 };
 
 export const forgotPasswordAction = async (formData: FormData) => {

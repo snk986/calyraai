@@ -11,6 +11,7 @@ import { createClient } from "@/utils/supabase/server";
 import { encodedRedirect } from "@/utils/utils";
 import { mapOAuthErrorToKey } from "@/lib/auth/error-map";
 import { baseUrl } from "@/lib/i18n/urls";
+import { SEO_TOOL_PAGE_PATHS } from "@/config/seo-pages";
 import Link from "next/link";
 
 function localePrefix(locale: Locale) {
@@ -19,6 +20,14 @@ function localePrefix(locale: Locale) {
 
 function localizedPath(locale: Locale, path: string) {
   return `${localePrefix(locale)}${path}`;
+}
+
+function safeRedirectPath(path?: string) {
+  if (!path || !path.startsWith("/") || path.startsWith("//")) {
+    return null;
+  }
+
+  return path;
 }
 
 export function generateStaticParams() {
@@ -47,17 +56,29 @@ function resolveAuthErrorMessage(
   }
 }
 
+type SignUpSearchParams = Message & {
+  redirectTo?: string;
+};
+
 export default async function SignUp(props: {
   params: Promise<{ locale: Locale }>;
-  searchParams: Promise<Message>;
+  searchParams: Promise<SignUpSearchParams>;
 }) {
   const { locale } = await props.params;
   const searchParams = await props.searchParams;
   const tAuth = await getTranslations({ locale, namespace: "authErrors" });
   const t = await getTranslations({ locale, namespace: "auth" });
-  const signUpPath = localizedPath(locale, "/sign-up");
-  const signInPath = localizedPath(locale, "/sign-in");
-  const homePath = localizedPath(locale, "/");
+  const redirectTo = safeRedirectPath(searchParams.redirectTo);
+  const signUpPath = redirectTo
+    ? `${localizedPath(locale, "/sign-up")}?redirectTo=${encodeURIComponent(redirectTo)}`
+    : localizedPath(locale, "/sign-up");
+  const signInHref = redirectTo
+    ? `${localizedPath(locale, "/sign-in")}?redirectTo=${encodeURIComponent(redirectTo)}`
+    : localizedPath(locale, "/sign-in");
+  const defaultDestination = localizedPath(
+    locale,
+    SEO_TOOL_PAGE_PATHS.aiTextToSong,
+  );
   const displayMessage = resolveAuthErrorMessage(searchParams, tAuth);
 
   const signUpWithGoogle = async () => {
@@ -68,7 +89,7 @@ export default async function SignUp(props: {
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {
-        redirectTo: `${origin}/auth/callback?redirect_to=${encodeURIComponent(homePath)}`,
+        redirectTo: `${origin}/auth/callback?redirect_to=${encodeURIComponent(redirectTo ?? defaultDestination)}`,
         queryParams: {
           access_type: "offline",
           prompt: "consent",
@@ -96,6 +117,9 @@ export default async function SignUp(props: {
       <div className="grid gap-6">
         <form className="grid gap-4">
           <input type="hidden" name="locale" value={locale} />
+          {redirectTo ? (
+            <input type="hidden" name="redirectTo" value={redirectTo} />
+          ) : null}
           <div className="grid gap-2">
             <Label htmlFor="email">{t("emailLabel")}</Label>
             <Input
@@ -173,7 +197,7 @@ export default async function SignUp(props: {
         <div className="text-center text-sm text-muted-foreground">
           {t("signUp.hasAccount")}{" "}
           <Link
-            href={signInPath}
+            href={signInHref}
             className="text-primary underline underline-offset-4 hover:text-primary/90"
           >
             {t("signUp.signIn")}

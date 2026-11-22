@@ -12,6 +12,7 @@ import { createClient } from "@/utils/supabase/server";
 import { encodedRedirect } from "@/utils/utils";
 import { mapOAuthErrorToKey } from "@/lib/auth/error-map";
 import { baseUrl } from "@/lib/i18n/urls";
+import { SEO_TOOL_PAGE_PATHS } from "@/config/seo-pages";
 import Link from "next/link";
 
 type SignInSearchParams = Message & {
@@ -71,7 +72,10 @@ export default async function Login(props: {
   const redirectTo = safeRedirectPath(searchParams.redirectTo);
   const signInPath = localizedPath(locale, "/sign-in");
   const forgotPasswordPath = localizedPath(locale, "/forgot-password");
-  const homePath = localizedPath(locale, "/");
+  const defaultDestination = localizedPath(
+    locale,
+    SEO_TOOL_PAGE_PATHS.aiTextToSong,
+  );
   const signUpHref = redirectTo
     ? `${localizedPath(locale, "/sign-up")}?redirectTo=${encodeURIComponent(redirectTo)}`
     : localizedPath(locale, "/sign-up");
@@ -84,7 +88,7 @@ export default async function Login(props: {
     const redirectToParam = safeRedirectPath(searchParams.redirectTo);
     const callbackUrl = redirectToParam
       ? `${origin}/auth/callback?redirect_to=${encodeURIComponent(redirectToParam)}`
-      : `${origin}/auth/callback?redirect_to=${encodeURIComponent(homePath)}`;
+      : `${origin}/auth/callback?redirect_to=${encodeURIComponent(defaultDestination)}`;
 
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: "google",
