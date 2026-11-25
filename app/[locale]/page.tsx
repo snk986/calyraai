@@ -224,7 +224,19 @@ export default async function Home({ params }: HomePageProps) {
     description: t(`pricingPreview.plans.${key}.description`),
   }));
 
-  const faqItems = ["q1", "q2", "q3", "q4", "q5", "q6", "q7"].map((key) => ({
+  const faqItems = [
+    "q1",
+    "q2",
+    "q3",
+    "q4",
+    "q5",
+    "q6",
+    "q7",
+    "q8",
+    "q9",
+    "q10",
+    "q11",
+  ].map((key) => ({
     question: t(`faq.${key}`),
     answer: t(`faq.${key.replace("q", "a")}`),
   }));

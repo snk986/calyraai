@@ -261,7 +261,15 @@
       "q6": "YouTube와 TikTok용 AI 음악을 만들 수 있나요?",
       "a6": "네. YouTube용 AI 음악, TikTok용 AI 음악, 팟캐스트, 숏폼 영상, 소셜 미디어 및 기타 크리에이터 프로젝트용 음악을 만들 수 있습니다.",
       "q7": "Calyra AI는 AI 노래 메이커인가요, AI 음악 생성기인가요?",
-      "a7": "Calyra AI는 텍스트, 가사, 스타일에서 완성형 노래를 만들 수 있도록 돕기 때문에 AI 노래 메이커이자 AI 음악 생성기라고 할 수 있습니다."
+      "a7": "Calyra AI는 텍스트, 가사, 스타일에서 완성형 노래를 만들 수 있도록 돕기 때문에 AI 노래 메이커이자 AI 음악 생성기라고 할 수 있습니다.",
+      "q8": "Can I make instrumentals or songs with vocals?",
+      "a8": "Both. You can generate songs with vocals and instruments, or choose an instrumental direction for a track without vocals.",
+      "q9": "What should I put in a prompt?",
+      "a9": "Include the mood, genre, vocal type, and where you will use the song. For example: \"An upbeat pop intro for a travel vlog, female vocal, bright chorus, 15-second hook.\"",
+      "q10": "How long are my songs stored?",
+      "a10": "Free-account songs are stored for 30 days. Songs generated on an active Basic or Pro subscription are kept long-term.",
+      "q11": "Can two AI songs sound similar?",
+      "a11": "Yes, similar prompts and styles can produce similar-sounding results. To get more distinctive tracks, vary your prompt, genre, vocal type, and instruments between generations."
     },
     "whyChoose": {
       "eyebrow": "Why Choose Calyra",
