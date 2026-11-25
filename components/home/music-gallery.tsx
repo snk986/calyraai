@@ -15,7 +15,6 @@ export type FeaturedGallerySong = {
   id: string;
   title: string;
   badge: string | null;
-  avatarUrl: string;
   audioUrl: string;
   coverUrl: string;
   playCount: number;
@@ -184,7 +183,7 @@ export function MusicGallery({ songs }: { songs: FeaturedGallerySong[] }) {
                 <div className="relative aspect-[7/10] overflow-hidden rounded-xl shadow-2xl shadow-black/25">
                   <img
                     src={song.coverUrl}
-                    alt={song.title}
+                    alt={`${song.title} - ${song.badge ?? "AI"} song made with Calyra AI`}
                     className="absolute inset-0 h-full w-full scale-[1.08] object-cover"
                   />
                   <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.04),transparent_48%,rgba(0,0,0,0.42))]" />
@@ -212,11 +211,12 @@ export function MusicGallery({ songs }: { songs: FeaturedGallerySong[] }) {
                   </Link>
                 </h3>
                 <div className="mt-2 flex items-center gap-2 text-sm font-semibold text-slate-400">
-                  <img
-                    src={song.avatarUrl}
-                    alt=""
-                    className="h-7 w-7 shrink-0 rounded-full bg-white/15 object-cover"
-                  />
+                  <span
+                    aria-hidden="true"
+                    className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-white/15 text-xs font-black text-slate-200"
+                  >
+                    {(song.badge ?? song.title).charAt(0).toUpperCase()}
+                  </span>
                   {song.badge ? (
                     <span className="min-w-0 truncate">{song.badge}</span>
                   ) : null}
@@ -233,7 +233,7 @@ export function MusicGallery({ songs }: { songs: FeaturedGallerySong[] }) {
             <div className="flex min-w-0 items-center gap-3">
               <img
                 src={activeSong.coverUrl}
-                alt={activeSong.title}
+                alt={`${activeSong.title} - ${activeSong.badge ?? "AI"} song made with Calyra AI`}
                 className="h-12 w-12 shrink-0 rounded-md object-cover"
               />
               <div className="min-w-0">

@@ -51,10 +51,6 @@ type FeaturedSongRow = {
   total_score: number | null;
 };
 
-function portraitAvatarUrl(songId: string) {
-  return `https://i.pravatar.cc/96?u=${encodeURIComponent(songId)}`;
-}
-
 async function getFeaturedGallerySongs(): Promise<FeaturedGallerySong[]> {
   const supabase = createServiceRoleClient();
   const { data, error } = await supabase
@@ -90,7 +86,6 @@ async function getFeaturedGallerySongs(): Promise<FeaturedGallerySong[]> {
       id: song.id,
       title: song.title,
       badge: song.featured_badge ?? song.style_tags?.[0] ?? null,
-      avatarUrl: portraitAvatarUrl(song.id),
       audioUrl: song.audio_url!,
       coverUrl: song.cover_url!,
       playCount: song.play_count ?? 0,
