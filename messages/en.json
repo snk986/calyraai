@@ -273,15 +273,15 @@
       "plans": {
         "free": {
           "title": "Free",
-          "description": "$0 - Start testing song ideas without a subscription."
+          "description": "$0 - 3 free songs to start (300 welcome credits), kept for 30 days."
         },
         "basic": {
           "title": "Basic",
-          "description": "$8.99/month - 30 songs/month for steady creators."
+          "description": "$8.99/month - 30 songs/month, permanent storage, MP3 downloads, commercial use."
         },
         "pro": {
           "title": "Pro",
-          "description": "$18.99/month - 100 songs/month for higher-volume creation."
+          "description": "$18.99/month - 100 songs/month, priority generation, MP3 downloads, commercial use."
         }
       }
     },
@@ -1214,12 +1214,12 @@
     "yearly": "Yearly",
     "planCta": "Get Started",
     "freeCard": {
-      "description": "For new creators getting started with one song idea.",
+      "description": "3 free songs to start.",
       "priceLabel": "Free",
-      "creditHint": "No subscription required",
-      "feature1": "Create with pay-as-you-go credit packs",
+      "creditHint": "300 welcome credits, songs kept for 30 days",
+      "feature1": "3 free songs (300 credits)",
       "feature2": "Lyrics + audio generation",
-      "feature3": "Upgrade anytime"
+      "feature3": "Songs stored for 30 days"
     },
     "creditPacks": {
       "standard": {
@@ -1240,17 +1240,17 @@
     "subscriptions": {
       "basic": {
         "name": "Basic",
-        "description": "For regular creators who want songs that last.",
-        "feature1": "3000 credits per month",
+        "description": "30 songs per month for regular creators.",
+        "feature1": "3000 credits (30 songs) per month",
         "feature2": "Songs stored permanently",
-        "feature3": "Producer reports included"
+        "feature3": "MP3 downloads + commercial use"
       },
       "pro": {
         "name": "Pro",
-        "description": "Priority generation and maximum creative output.",
-        "feature1": "10000 credits per month",
-        "feature2": "Songs stored permanently",
-        "feature3": "Priority audio generation"
+        "description": "100 songs per month with priority generation.",
+        "feature1": "10000 credits (100 songs) per month",
+        "feature2": "Priority audio generation",
+        "feature3": "MP3 downloads + commercial use"
       }
     },
     "faq": {
