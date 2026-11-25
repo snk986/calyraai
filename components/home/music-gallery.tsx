@@ -184,6 +184,10 @@ export function MusicGallery({ songs }: { songs: FeaturedGallerySong[] }) {
                   <img
                     src={song.coverUrl}
                     alt={`${song.title} - ${song.badge ?? "AI"} song made with Calyra AI`}
+                    width={440}
+                    height={628}
+                    loading="lazy"
+                    decoding="async"
                     className="absolute inset-0 h-full w-full scale-[1.08] object-cover"
                   />
                   <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.04),transparent_48%,rgba(0,0,0,0.42))]" />

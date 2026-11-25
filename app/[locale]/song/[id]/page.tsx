@@ -124,7 +124,7 @@ export async function generateMetadata({
   }
 
   const primaryStyleTag = song.styleTags[0] ?? "AI";
-  const title = `"${song.title}" - ${primaryStyleTag} Song | Calyra AI`;
+  const title = `${song.title} - ${primaryStyleTag} AI Song | Calyra AI`;
   const description = buildSeoDescription(song.lyrics);
   const url = absoluteLocaleUrl("en", `/song/${id}`);
   const shouldIndex =

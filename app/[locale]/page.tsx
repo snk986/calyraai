@@ -145,41 +145,49 @@ export default async function Home({ params }: HomePageProps) {
       icon: Mic2,
       title: t("styles.rap.title"),
       description: t("styles.rap.description"),
+      href: "/ai-song-maker",
     },
     {
       icon: Sparkles,
       title: t("styles.songMaker.title"),
       description: t("styles.songMaker.description"),
+      href: "/ai-song-maker",
     },
     {
       icon: PenLine,
       title: t("styles.lyrics.title"),
       description: t("styles.lyrics.description"),
+      href: "/ai-lyrics-to-song",
     },
     {
       icon: FileText,
       title: t("styles.text.title"),
       description: t("styles.text.description"),
+      href: "/ai-text-to-song",
     },
     {
       icon: Car,
       title: t("styles.phonk.title"),
       description: t("styles.phonk.description"),
+      href: "/ai-song-maker",
     },
     {
       icon: Coffee,
       title: t("styles.lofi.title"),
       description: t("styles.lofi.description"),
+      href: "/ai-song-maker",
     },
     {
       icon: Zap,
       title: t("styles.edm.title"),
       description: t("styles.edm.description"),
+      href: "/ai-song-maker",
     },
     {
       icon: Star,
       title: t("styles.anime.title"),
       description: t("styles.anime.description"),
+      href: "/ai-song-maker",
     },
   ];
 
@@ -437,7 +445,7 @@ export default async function Home({ params }: HomePageProps) {
             return (
               <LocaleLink
                 key={item.title}
-                href="/ai-song-maker"
+                href={item.href}
                 className="group min-h-40 rounded-[26px] border border-white/10 bg-white/[0.055] p-5 transition hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.085]"
               >
                 <div className="mb-5 grid h-11 w-11 place-items-center rounded-2xl bg-gradient-to-br from-violet-500 to-pink-600 text-white">

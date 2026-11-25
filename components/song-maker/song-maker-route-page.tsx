@@ -230,7 +230,7 @@ export async function SongMakerRoutePage({
             description: t("whyChoose.description"),
             link: {
               href: `${localePrefix(locale)}/about`,
-              label: "learn more",
+              label: "Learn about Calyra AI",
             },
             items: {
               modes: {
