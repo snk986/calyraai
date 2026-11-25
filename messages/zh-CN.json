@@ -160,7 +160,14 @@
         "games": "游戏音乐",
         "ads": "广告",
         "social": "社交媒体"
-      }
+      },
+      "bullets": {
+        "download": "Paid users can download songs and use them commercially, subject to our Terms and plan limits.",
+        "free": "Free or trial generations may have different rights and limits. Check the latest terms before using them in paid media.",
+        "record": "Keep a record of your account, plan, song page, and download for each track you publish.",
+        "responsible": "You are responsible for your prompts and inputs and for following platform rules."
+      },
+      "termsCta": "Terms"
     },
     "howItWorks": {
       "eyebrow": "工作方式",
@@ -169,15 +176,15 @@
     "steps": {
       "idea": {
         "title": "选择 Text to Song 或 Lyrics to Song",
-        "description": ""
+        "description": "Use Text to Song when you have an idea, mood, or story. Use Lyrics to Song when you already have words."
       },
       "generate": {
         "title": "选择一种音乐风格",
-        "description": ""
+        "description": "Choose a genre such as Pop, Rap, Rock, EDM, Lo-fi, or Anime, then pick a male or female vocal and add details like tempo and instruments."
       },
       "download": {
         "title": "生成并下载你的 AI 歌曲",
-        "description": ""
+        "description": "Generate, listen, and compare versions. Save the one you like, publish a share page, or download it on a paid plan."
       }
     },
     "benefits": {
@@ -255,6 +262,53 @@
       "a6": "可以。你可以为 YouTube、TikTok、播客、短视频、社交媒体和其他创作者项目创作 AI 音乐。",
       "q7": "Calyra AI 是 AI song maker 还是 AI music generator？",
       "a7": "Calyra AI 可以同时被称为 AI Song Maker 和 AI music generator，因为它能帮助你从文字、歌词和风格创建完整歌曲。"
+    },
+    "whyChoose": {
+      "eyebrow": "Why Choose Calyra",
+      "title": "Why Choose Calyra AI Song Maker",
+      "intro": "From a rough idea to a finished track, Calyra keeps the workflow simple.",
+      "cards": {
+        "start": {
+          "title": "Start from text or lyrics",
+          "description": "Describe a mood, scene, or story with Text to Song, or paste finished lyrics into Lyrics to Song. Either way you get an original track with vocals and instruments."
+        },
+        "direct": {
+          "title": "Direct the sound",
+          "description": "Set the genre, mood, vocal character, and instruments, then add a title. Clear style cues help the result match your project."
+        },
+        "keep": {
+          "title": "Keep every track",
+          "description": "Generated songs are saved to your account with cover art and a public song page you can share. Paid users can download them."
+        }
+      },
+      "linkLabel": "Learn about Calyra"
+    },
+    "scenarios": {
+      "eyebrow": "Use Cases",
+      "title": "AI Music for YouTube, TikTok, Podcasts and Games",
+      "cards": {
+        "youtube": {
+          "title": "YouTube videos",
+          "description": "Intros, transitions, end-screen music, and background tracks that match your channel instead of the same library tracks everyone uses."
+        },
+        "tiktok": {
+          "title": "TikTok, Shorts and Reels",
+          "description": "Short hooks with strong rhythm for quick edits and repeat viewing."
+        },
+        "podcast": {
+          "title": "Podcasts",
+          "description": "Openers, segment stingers, and sponsor transitions that make an episode feel branded."
+        },
+        "games": {
+          "title": "Games and streams",
+          "description": "Test sound directions and theme songs before committing a bigger budget."
+        },
+        "ads": {
+          "title": "Ads and social media",
+          "description": "Short jingles and background music for campaigns and social content."
+        }
+      },
+      "linkLabel": "View creator pricing"
     }
   },
   "create": {

@@ -124,10 +124,6 @@ export function generateStaticParams() {
 export default async function Home({ params }: HomePageProps) {
   const { locale } = await params;
   const t = await getTranslations("home");
-  const seoContent = await getTranslations({
-    locale: "en",
-    namespace: "home.seo",
-  });
   const gallerySongs = await getFeaturedGallerySongs();
   const textToSongPath =
     locale === defaultLocale
@@ -144,6 +140,7 @@ export default async function Home({ params }: HomePageProps) {
   const songMakerPath =
     locale === defaultLocale ? "/ai-song-maker" : `/${locale}/ai-song-maker`;
   const aboutPath = locale === defaultLocale ? "/about" : `/${locale}/about`;
+  const termsPath = locale === defaultLocale ? "/terms" : `/${locale}/terms`;
   const freeLyricsGeneratorPath = "/free-ai-lyrics-generator";
   const heroText = (key: string, fallback: string) =>
     t.has(`hero.${key}`) ? t(`hero.${key}`) : fallback;
@@ -206,37 +203,25 @@ export default async function Home({ params }: HomePageProps) {
     description: t(`steps.${key}.description`),
   }));
 
+  const whyChooseCards = ["start", "direct", "keep"].map((key) => ({
+    title: t(`whyChoose.cards.${key}.title`),
+    description: t(`whyChoose.cards.${key}.description`),
+  }));
+
+  const scenarioCards = ["youtube", "tiktok", "podcast", "games", "ads"].map(
+    (key) => ({
+      title: t(`scenarios.cards.${key}.title`),
+      description: t(`scenarios.cards.${key}.description`),
+    }),
+  );
+
+  const commercialBullets = ["download", "free", "record", "responsible"].map(
+    (key) => t(`commercial.bullets.${key}`),
+  );
+
   const priceCards = ["free", "basic", "pro"].map((key) => ({
     title: t(`pricingPreview.plans.${key}.title`),
     description: t(`pricingPreview.plans.${key}.description`),
-  }));
-
-  const seoSections = [
-    {
-      key: "howToUse",
-      href: songMakerPath,
-      linkLabel: "Try the AI song maker",
-    },
-    {
-      key: "creators",
-      href: pricingPath,
-      linkLabel: "View creator pricing",
-    },
-    {
-      key: "whyChoose",
-      href: aboutPath,
-      linkLabel: "Learn about Calyra",
-    },
-    {
-      key: "commercialLicensing",
-      href: pricingPath,
-      linkLabel: "See commercial plans",
-    },
-  ].map(({ key, href, linkLabel }) => ({
-    title: seoContent(`sections.${key}.title`),
-    body: seoContent(`sections.${key}.body`),
-    href,
-    linkLabel,
   }));
 
   const faqItems = ["q1", "q2", "q3", "q4", "q5", "q6", "q7"].map((key) => ({
@@ -463,6 +448,42 @@ export default async function Home({ params }: HomePageProps) {
         </div>
       </MarketingSection>
 
+      <section className="bg-[#050509] py-14">
+        <div className="container px-4 md:px-6">
+          <div className="mb-8 max-w-3xl">
+            <p className="text-sm font-black uppercase text-violet-300">
+              {t("whyChoose.eyebrow")}
+            </p>
+            <h2 className="mt-3 text-4xl font-black leading-tight tracking-normal md:text-5xl">
+              {t("whyChoose.title")}
+            </h2>
+            <p className="mt-4 leading-8 text-slate-400">
+              {t("whyChoose.intro")}
+            </p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {whyChooseCards.map((item) => (
+              <article
+                key={item.title}
+                className="rounded-[26px] border border-white/10 bg-white/[0.055] p-6"
+              >
+                <h3 className="text-xl font-black tracking-normal">
+                  {item.title}
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-slate-400">
+                  {item.description}
+                </p>
+              </article>
+            ))}
+          </div>
+          <div className="mt-6">
+            <Link href={aboutPath} className="text-primary hover:underline">
+              {t("whyChoose.linkLabel")}
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <MarketingSection
         eyebrow={t("howItWorks.eyebrow")}
         title={t("howItWorks.title")}
@@ -485,7 +506,45 @@ export default async function Home({ params }: HomePageProps) {
             </article>
           ))}
         </div>
+        <div className="mt-6">
+          <Link href={songMakerPath} className="text-primary hover:underline">
+            Try the AI song maker
+          </Link>
+        </div>
       </MarketingSection>
+
+      <section className="bg-[#050509] py-14">
+        <div className="container px-4 md:px-6">
+          <div className="mb-8 max-w-3xl">
+            <p className="text-sm font-black uppercase text-violet-300">
+              {t("scenarios.eyebrow")}
+            </p>
+            <h2 className="mt-3 text-4xl font-black leading-tight tracking-normal md:text-5xl">
+              {t("scenarios.title")}
+            </h2>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {scenarioCards.map((item) => (
+              <article
+                key={item.title}
+                className="rounded-[26px] border border-white/10 bg-white/[0.055] p-6"
+              >
+                <h3 className="text-xl font-black tracking-normal">
+                  {item.title}
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-slate-400">
+                  {item.description}
+                </p>
+              </article>
+            ))}
+          </div>
+          <div className="mt-6">
+            <Link href={pricingPath} className="text-primary hover:underline">
+              {t("scenarios.linkLabel")}
+            </Link>
+          </div>
+        </div>
+      </section>
 
       <section className="bg-[#050509] py-14">
         <div className="container grid gap-8 rounded-[36px] border border-white/20 bg-[radial-gradient(circle_at_85%_0%,rgba(34,211,238,0.16),transparent_32%),radial-gradient(circle_at_20%_20%,rgba(139,92,246,0.18),transparent_28%),rgba(255,255,255,0.052)] px-6 py-10 shadow-2xl shadow-black/30 md:px-10 lg:grid-cols-2 lg:items-center">
@@ -499,6 +558,17 @@ export default async function Home({ params }: HomePageProps) {
             <p className="mt-4 max-w-xl leading-8 text-slate-400">
               {t("commercial.subtitle")}
             </p>
+            <ul className="mt-5 max-w-xl space-y-2.5">
+              {commercialBullets.map((bullet) => (
+                <li
+                  key={bullet}
+                  className="flex items-start gap-2.5 text-sm leading-6 text-slate-300"
+                >
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-violet-400" />
+                  {bullet}
+                </li>
+              ))}
+            </ul>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <Button
                 asChild
@@ -506,6 +576,15 @@ export default async function Home({ params }: HomePageProps) {
               >
                 <LocaleLink href="/pricing">
                   {t("commercial.pricingCta")}
+                </LocaleLink>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                className="h-12 rounded-2xl border-white/15 bg-white/[0.06] px-5 font-bold text-white hover:bg-white/10 hover:text-white"
+              >
+                <LocaleLink href={termsPath}>
+                  {t("commercial.termsCta")}
                 </LocaleLink>
               </Button>
               <Button
@@ -613,32 +692,6 @@ export default async function Home({ params }: HomePageProps) {
                   {item.answer}
                 </div>
               </details>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-[#050509] pb-16">
-        <div className="container px-4 md:px-6">
-          <div className="grid gap-5 lg:grid-cols-2">
-            {seoSections.map((section) => (
-              <section
-                key={section.title}
-                className="rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-5 md:px-6"
-              >
-                <h2 className="text-base font-bold text-slate-100">
-                  {section.title}
-                </h2>
-                <p className="mt-2 text-sm leading-7 text-slate-400">
-                  {section.body}{" "}
-                  <Link
-                    href={section.href}
-                    className="text-primary hover:underline"
-                  >
-                    {section.linkLabel}
-                  </Link>
-                </p>
-              </section>
             ))}
           </div>
         </div>
