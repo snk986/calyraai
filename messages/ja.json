@@ -72,7 +72,7 @@
       "vocals": "ボーカル + 楽器",
       "prompt": "プロンプトから曲",
       "lyrics": "歌詞から曲",
-      "free": "無料ユーザーは毎日試せます"
+      "free": "3 free songs to start"
     },
     "player": {
       "badge": "再生中 - AIポップアンセム",
@@ -263,8 +263,8 @@
       "a6": "はい。YouTube向けAI音楽、TikTok向けAI音楽、ポッドキャスト、ショート動画、SNS、その他クリエイター向けプロジェクトの音楽を作成できます。",
       "q7": "Calyra AIはAIソングメーカーですか、それともAI音楽ジェネレーターですか？",
       "a7": "Calyra AIは、テキスト、歌詞、スタイルから完成した曲を作成できるため、AIソングメーカーでもありAI音楽ジェネレーターでもあります。",
-      "q8": "Can I make instrumentals or songs with vocals?",
-      "a8": "Both. You can generate songs with vocals and instruments, or choose an instrumental direction for a track without vocals.",
+      "q8": "Can I make songs with vocals and instruments?",
+      "a8": "Yes. Generated songs include vocals and instruments, and you can guide the vocal type, instruments, mood, and style in the prompt.",
       "q9": "What should I put in a prompt?",
       "a9": "Include the mood, genre, vocal type, and where you will use the song. For example: \"An upbeat pop intro for a travel vlog, female vocal, bright chorus, 15-second hook.\"",
       "q10": "How long are my songs stored?",
@@ -747,8 +747,8 @@
       "a3": "Basic / Pro の2プランがあり、月払い・年払いに対応しています。月払いは毎月自動更新、年払いは毎年自動更新で、初回請求日は購入日です。",
       "q4": "サブスク後に得られる著作権・商用利用権は？",
       "a4": "サブスクユーザーは生成済みの全楽曲をダウンロードでき、コンテンツ公開、商用プロジェクト、音楽プラットフォーム配信を含む完全な商用利用権を取得できます。",
-      "q5": "無料ユーザーは1日に何回生成できますか？",
-      "a5": "24時間ごとに1〜2回の無料生成が可能で、合計2〜4曲を作成できます。ローリング方式のため、無料枠を使い切った時刻を基準に次回のリセット時刻が決まります。",
+      "q5": "How many free songs can I make?",
+      "a5": "Every new account starts with 300 free credits, enough for 3 complete songs at 100 credits each. There is no daily free limit; once those credits are used, you can buy a credit pack or subscribe.",
       "q6": "作品はどれくらい保存されますか？削除されますか？",
       "a6": "現在のルール：無料ユーザーの楽曲は30日保存されます。Basic / Pro の有効期間中に生成した楽曲は長期保存されます。長期運用やカタログ蓄積が必要な場合は上位プランがおすすめです。"
     },

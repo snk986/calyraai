@@ -72,7 +72,7 @@
       "vocals": "보컬 + 악기",
       "prompt": "프롬프트로 노래",
       "lyrics": "가사로 노래",
-      "free": "무료 사용자는 매일 체험 가능"
+      "free": "3 free songs to start"
     },
     "player": {
       "badge": "재생 중 - AI 팝 앤섬",
@@ -263,8 +263,8 @@
       "a6": "네. YouTube용 AI 음악, TikTok용 AI 음악, 팟캐스트, 숏폼 영상, 소셜 미디어 및 기타 크리에이터 프로젝트용 음악을 만들 수 있습니다.",
       "q7": "Calyra AI는 AI 노래 메이커인가요, AI 음악 생성기인가요?",
       "a7": "Calyra AI는 텍스트, 가사, 스타일에서 완성형 노래를 만들 수 있도록 돕기 때문에 AI 노래 메이커이자 AI 음악 생성기라고 할 수 있습니다.",
-      "q8": "Can I make instrumentals or songs with vocals?",
-      "a8": "Both. You can generate songs with vocals and instruments, or choose an instrumental direction for a track without vocals.",
+      "q8": "Can I make songs with vocals and instruments?",
+      "a8": "Yes. Generated songs include vocals and instruments, and you can guide the vocal type, instruments, mood, and style in the prompt.",
       "q9": "What should I put in a prompt?",
       "a9": "Include the mood, genre, vocal type, and where you will use the song. For example: \"An upbeat pop intro for a travel vlog, female vocal, bright chorus, 15-second hook.\"",
       "q10": "How long are my songs stored?",
@@ -747,8 +747,8 @@
       "a3": "Basic / Pro 두 가지 플랜이 있으며 월간/연간 결제를 지원합니다. 월간은 매월 자동 갱신, 연간은 매년 자동 갱신되며 첫 결제일은 구매 당일입니다.",
       "q4": "구독 후 어떤 저작권/상업적 권리를 받을 수 있나요?",
       "a4": "구독자는 생성된 모든 곡을 다운로드할 수 있으며, 콘텐츠 게시, 상업 프로젝트, 음악 플랫폼 배포를 포함한 완전한 상업적 사용 권한을 받습니다.",
-      "q5": "무료 사용자는 하루에 몇 번 생성할 수 있나요?",
-      "a5": "24시간마다 1-2회의 무료 생성 기회가 제공되며 총 2-4곡을 만들 수 있습니다. 롤링 기준이 적용되어, 무료 횟수를 모두 사용한 시점을 기준으로 다음 초기화 시간이 계산됩니다.",
+      "q5": "How many free songs can I make?",
+      "a5": "Every new account starts with 300 free credits, enough for 3 complete songs at 100 credits each. There is no daily free limit; once those credits are used, you can buy a credit pack or subscribe.",
       "q6": "작품은 얼마나 보관되나요? 삭제되나요?",
       "a6": "현재 정책: 무료 사용자의 곡은 30일 보관됩니다. Basic / Pro 구독 기간 중 생성된 곡은 장기 보관됩니다. 장기 운영이나 카탈로그 축적이 필요하다면 상위 플랜을 권장합니다."
     },

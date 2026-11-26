@@ -323,7 +323,7 @@ export async function SongMakerRoutePage({
             {
               "@type": "HowToStep",
               name: "Generate and download",
-              text: "Click the generate button to start the AI music creation process. The system typically takes 60-90 seconds to compose and produce your complete song with vocals, instruments, mixing, and mastering. Preview the result directly in your browser to evaluate the quality. Paid plan users can download the song in MP3 (standard quality) or WAV (high quality) format for commercial use in videos, podcasts, or streaming platforms. Free users can generate up to 3 songs per day.",
+              text: "Click the generate button to start the AI music creation process. Preview the result directly in your browser to evaluate the quality. Paid plan users can download the song as an MP3 file for use in videos, podcasts, or streaming platforms. Every new account starts with 300 free credits, enough for 3 complete songs.",
               url: absoluteLocaleUrl(locale, routePath),
             },
           ],

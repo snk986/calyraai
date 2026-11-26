@@ -71,7 +71,7 @@
       "vocals": "Vocals + instruments",
       "prompt": "Prompt to Song",
       "lyrics": "Lyrics to Song",
-      "free": "Free users can try daily"
+      "free": "3 free songs to start"
     },
     "player": {
       "badge": "Now Playing - AI Pop Anthem",
@@ -309,8 +309,8 @@
       "a6": "Text to Song starts from an idea, mood, or story and generates both lyrics and music. Lyrics to Song starts from lyrics you already wrote and builds the music around them.",
       "q7": "Can I use songs commercially?",
       "a7": "Downloading is included with paid plans, and paid users can use downloaded songs commercially within the rights described in our Terms of Service.",
-      "q8": "Can I make instrumentals or songs with vocals?",
-      "a8": "Both. You can generate songs with vocals and instruments, or choose an instrumental direction for a track without vocals.",
+      "q8": "Can I make songs with vocals and instruments?",
+      "a8": "Yes. Generated songs include vocals and instruments, and you can guide the vocal type, instruments, mood, and style in the prompt.",
       "q9": "What should I put in a prompt?",
       "a9": "Include the mood, genre, vocal type, and where you will use the song. For example: \"An upbeat pop intro for a travel vlog, female vocal, bright chorus, 15-second hook.\"",
       "q10": "How long are my songs stored?",
@@ -1388,8 +1388,8 @@
       "a3": "We offer two plans: Basic and Pro, with both monthly and yearly billing. Monthly plans renew automatically every month, yearly plans renew automatically every year, and the first charge starts on your purchase date.",
       "q4": "What copyright/commercial rights do I get after subscribing?",
       "a4": "Subscribers can download all generated songs and receive full commercial usage rights, including use for content publishing, commercial projects, and music platform distribution.",
-      "q5": "How many free generations do free users get each day?",
-      "a5": "You get 1-2 free generations every 24 hours, which can produce 2-4 songs. This uses a rolling window: once your free uses are consumed, the next reset is calculated from that exact time.",
+      "q5": "How many free songs can I make?",
+      "a5": "Every new account starts with 300 free credits, enough for 3 complete songs at 100 credits each. There is no daily free limit; once those credits are used, you can buy a credit pack or subscribe.",
       "q6": "How long are songs stored? Will they be deleted?",
       "a6": "Current policy: free users' songs are stored for 30 days. Songs generated during an active Basic or Pro subscription are kept long-term. If you need long-term catalog retention, a higher tier is recommended."
     },

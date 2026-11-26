@@ -72,7 +72,7 @@
       "vocals": "Vozes + instrumentos",
       "prompt": "Instrução para música",
       "lyrics": "Letra para música",
-      "free": "Usuários grátis podem testar diariamente"
+      "free": "3 free songs to start"
     },
     "player": {
       "badge": "Tocando agora - Hino pop com IA",
@@ -263,8 +263,8 @@
       "a6": "Sim. Você pode criar música com IA para YouTube, música com IA para TikTok, podcasts, vídeos curtos, redes sociais e outros projetos de criadores.",
       "q7": "O Calyra AI é um criador de músicas com IA ou um gerador de música com IA?",
       "a7": "O Calyra AI pode ser descrito como os dois: um criador de músicas com IA e um gerador de música com IA, porque ajuda você a criar músicas completas a partir de texto, letras e estilos.",
-      "q8": "Can I make instrumentals or songs with vocals?",
-      "a8": "Both. You can generate songs with vocals and instruments, or choose an instrumental direction for a track without vocals.",
+      "q8": "Can I make songs with vocals and instruments?",
+      "a8": "Yes. Generated songs include vocals and instruments, and you can guide the vocal type, instruments, mood, and style in the prompt.",
       "q9": "What should I put in a prompt?",
       "a9": "Include the mood, genre, vocal type, and where you will use the song. For example: \"An upbeat pop intro for a travel vlog, female vocal, bright chorus, 15-second hook.\"",
       "q10": "How long are my songs stored?",
@@ -747,8 +747,8 @@
       "a3": "Temos dois planos: Basic e Pro, com cobranca mensal ou anual. O plano mensal renova automaticamente todo mes, o anual renova automaticamente todo ano, e a primeira cobranca ocorre na data da compra.",
       "q4": "Quais direitos autorais/comerciais eu recebo ao assinar?",
       "a4": "Assinantes podem baixar todas as musicas geradas e recebem direitos completos de uso comercial, incluindo publicacao de conteudo, projetos comerciais e distribuicao em plataformas musicais.",
-      "q5": "Quantas geracoes gratis usuarios gratuitos recebem por dia?",
-      "a5": "A cada 24 horas, voce recebe 1-2 geracoes gratis, com producao total de 2-4 musicas. A janela e movel: quando os usos acabam, o proximo reset e calculado a partir daquele momento exato.",
+      "q5": "How many free songs can I make?",
+      "a5": "Every new account starts with 300 free credits, enough for 3 complete songs at 100 credits each. There is no daily free limit; once those credits are used, you can buy a credit pack or subscribe.",
       "q6": "Por quanto tempo as musicas ficam salvas? Elas podem ser removidas?",
       "a6": "Regra atual: musicas de usuarios gratuitos ficam salvas por 30 dias. Musicas geradas durante uma assinatura Basic ou Pro ativa ficam salvas por longo prazo. Se voce precisa de acervo de longo prazo, um plano superior e recomendado."
     },

@@ -72,7 +72,7 @@
       "vocals": "人声 + 乐器",
       "prompt": "Prompt to Song",
       "lyrics": "Lyrics to Song",
-      "free": "免费用户每天可试用"
+      "free": "3 free songs to start"
     },
     "player": {
       "badge": "正在播放 - AI Pop Anthem",
@@ -263,8 +263,8 @@
       "a6": "可以。你可以为 YouTube、TikTok、播客、短视频、社交媒体和其他创作者项目创作 AI 音乐。",
       "q7": "Calyra AI 是 AI song maker 还是 AI music generator？",
       "a7": "Calyra AI 可以同时被称为 AI Song Maker 和 AI music generator，因为它能帮助你从文字、歌词和风格创建完整歌曲。",
-      "q8": "Can I make instrumentals or songs with vocals?",
-      "a8": "Both. You can generate songs with vocals and instruments, or choose an instrumental direction for a track without vocals.",
+      "q8": "Can I make songs with vocals and instruments?",
+      "a8": "Yes. Generated songs include vocals and instruments, and you can guide the vocal type, instruments, mood, and style in the prompt.",
       "q9": "What should I put in a prompt?",
       "a9": "Include the mood, genre, vocal type, and where you will use the song. For example: \"An upbeat pop intro for a travel vlog, female vocal, bright chorus, 15-second hook.\"",
       "q10": "How long are my songs stored?",
@@ -747,8 +747,8 @@
       "a3": "我们有 Basic / Pro 两档，支持月付和年付。月付每月自动续费，年付每年自动续费。首次扣费从开通当天开始，你可以按创作频率灵活选择方案。",
       "q4": "订阅后我能拿到哪些版权权益？",
       "a4": "订阅用户可下载全部已生成歌曲，并获得完整商业使用授权，可用于内容发布、商业项目和音乐平台分发。",
-      "q5": "免费用户每天能生成几次？",
-      "a5": "每 24 小时提供 1–2 次免费生成，可产出 2–4 首歌曲。采用滚动计时：你何时用完，就从该时刻起计算下一次恢复时间。",
+      "q5": "How many free songs can I make?",
+      "a5": "Every new account starts with 300 free credits, enough for 3 complete songs at 100 credits each. There is no daily free limit; once those credits are used, you can buy a credit pack or subscribe.",
       "q6": "作品会保存多久？会不会被删掉？",
       "a6": "当前规则是：免费用户歌曲保存 30 天；Basic / Pro 订阅用户在订阅期间生成的歌曲为长期保存。如果你有长期运营内容或曲库沉淀需求，建议选择更高档位。"
     },

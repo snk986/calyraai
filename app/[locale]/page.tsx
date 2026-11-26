@@ -317,7 +317,7 @@ export default async function Home({ params }: HomePageProps) {
       {
         "@type": "HowToStep",
         name: "Generate and download",
-        text: "Click the generate button and wait 60-90 seconds for AI to create your complete song with vocals, instruments, and cover art. Listen to the preview directly in your browser. If you have a paid plan, download the song as an MP3 or WAV file for use in your projects. Free users can generate up to 3 songs per day and share them online with attribution.",
+        text: "Click the generate button and wait for AI to create your complete song with vocals, instruments, and cover art. Listen to the preview directly in your browser. If you have a paid plan, download the song as an MP3 file for use in your projects. Every new account starts with 300 free credits, enough for 3 complete songs.",
         url: absoluteLocaleUrl(locale, "/"),
       },
     ],
