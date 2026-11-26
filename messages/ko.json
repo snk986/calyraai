@@ -42,7 +42,8 @@
     "aiLyricsGenerator": "AI 가사 생성기",
     "aiBirthdaySongGenerator": "AI 생일 노래 생성기",
     "aiSongMaker": "AI 노래 메이커",
-    "worldCupSongGenerator": "월드컵 노래 생성기"
+    "worldCupSongGenerator": "월드컵 노래 생성기",
+    "christmasSongGenerator": "Christmas Song Generator"
   },
   "home": {
     "seo": {
@@ -1502,6 +1503,130 @@
       "finalCta": {
         "title": "가사를 음악으로 바꿀 준비가 되었나요?",
         "description": "지금 가사를 생성하고 편집한 뒤 준비되면 완성형 노래를 제작하세요."
+      }
+    },
+    "christmasSongGenerator": {
+      "seo": {
+        "title": "Christmas Song Generator: Custom Holiday Songs | Calyra AI",
+        "description": "Create custom Christmas songs with names and personal holiday wishes. Make original holiday music for gifts, cards, and videos."
+      },
+      "hero": {
+        "eyebrow": "Christmas Song Generator",
+        "title": "Christmas Song Generator",
+        "description": "Make a personalized Christmas song with a name, a warm holiday message, and a style you pick. Use it for gifts, family cards, video soundtracks, or a surprise for someone you care about. Start with a name and a holiday mood, and Calyra AI prepares an original holiday song with vocals and instruments."
+      },
+      "cta": {
+        "secondary": "Try AI Song Maker"
+      },
+      "form": {
+        "badge": "Christmas song setup",
+        "name": "Name",
+        "namePlaceholder": "Alex",
+        "recipient": "Who is it for?",
+        "message": "Holiday message",
+        "messagePlaceholder": "Add a memory, a wish, or a detail about the season to make it personal.",
+        "style": "Music style",
+        "styleDefault": "Warm holiday pop, bells, clear vocal, memorable chorus",
+        "submit": "Create Christmas Song",
+        "exampleLabel": "Try an example idea:",
+        "options": {
+          "family": "Family",
+          "partner": "Partner",
+          "friend": "Friend",
+          "child": "Child",
+          "coworker": "Coworker",
+          "classic": "Classic carol",
+          "pop": "Upbeat pop",
+          "jazz": "Warm jazz",
+          "lofi": "Cozy lo-fi",
+          "kids": "Children's song"
+        }
+      },
+      "examples": {
+        "gift": {
+          "label": "A gift song",
+          "prompt": "A cozy Christmas gift song with warm wishes, a soft bell intro, and a heartfelt chorus that mentions the name naturally."
+        },
+        "card": {
+          "label": "Family card soundtrack",
+          "prompt": "A gentle holiday song for a family greeting card video, warm piano, light sleigh bells, and a message about togetherness."
+        },
+        "kids": {
+          "label": "A song for a child",
+          "prompt": "A playful children's Christmas song with a bright melody, simple lyrics about snow and gifts, and a cheerful sing-along chorus."
+        }
+      },
+      "benefits": {
+        "title": "Write a Better Christmas Song Than a Generic Greeting",
+        "description": "A name and a real message turn a stock holiday tune into something made for one person. Use these directions to get the tone and details right.",
+        "items": {
+          "name": {
+            "title": "Put the name in the chorus",
+            "description": "Add the person's name so the lyrics address them directly, the way a personal card or gift message would."
+          },
+          "style": {
+            "title": "Pick a holiday style",
+            "description": "Choose a classic carol feel, upbeat pop, warm jazz, cozy lo-fi, or a bright children's song, then adjust the vocal and instruments."
+          },
+          "scene": {
+            "title": "Describe the moment",
+            "description": "Mention the scene, whether it is a gift opening, a family gathering, a holiday card, or a video, so the song fits where it will be used."
+          }
+        }
+      },
+      "steps": {
+        "title": "How to Make a Christmas Song with Calyra AI",
+        "description": "Start with a name and a holiday mood, then continue into the song generator to finish the track.",
+        "items": {
+          "personalize": {
+            "title": "Add the name and message",
+            "description": "Tell Calyra AI who the song is for and add a personal holiday wish or memory so the lyrics feel made for them."
+          },
+          "style": {
+            "title": "Choose the style and vocal",
+            "description": "Pick classic carol, pop, jazz, lo-fi, or a children's song, and set the vocal type, instruments, and tempo."
+          },
+          "generate": {
+            "title": "Generate and share",
+            "description": "Continue to the AI text to song workflow to generate the holiday track, then use it for a gift, card, or video."
+          }
+        }
+      },
+      "faq": {
+        "title": "Christmas Song Generator FAQ",
+        "one": {
+          "question": "Can I put someone's name in a Christmas song?",
+          "answer": "Yes. Add the name and a personal message, and Calyra AI prepares lyrics that mention the name naturally, so the song works as a gift or greeting."
+        },
+        "two": {
+          "question": "Can I choose a style like jazz or lo-fi?",
+          "answer": "Yes. You can guide the style toward a classic carol feel, upbeat pop, warm jazz, cozy lo-fi, or a bright children's song, then adjust the vocal and instruments."
+        },
+        "three": {
+          "question": "Can I use the song for a family card or video?",
+          "answer": "You can create songs for holiday cards, family videos, gift messages, and social content according to your plan and Calyra AI Terms."
+        },
+        "four": {
+          "question": "Is the song original or a cover?",
+          "answer": "Calyra AI generates original lyrics and music. It does not reproduce the lyrics of existing Christmas songs, so write your own wishes and details in the prompt."
+        },
+        "five": {
+          "question": "Is it free to start?",
+          "answer": "Yes. Every new account starts with 300 free credits, enough for 3 complete songs. Downloading and commercial use require a paid plan."
+        }
+      },
+      "breadcrumb": {
+        "home": "Home",
+        "current": "Christmas Song Generator"
+      },
+      "related": {
+        "title": "Keep exploring",
+        "links": {
+          "songMaker": "AI Song Maker",
+          "textToSong": "Text to Song",
+          "lyricsToSong": "Lyrics to Song",
+          "home": "Calyra AI home"
+        }
       }
     }
   },

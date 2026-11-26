@@ -35,6 +35,10 @@ export function Footer() {
       href: "/ai-birthday-song-generator",
     },
     {
+      label: t("christmasSongGenerator"),
+      href: "/christmas-song-generator",
+    },
+    {
       label: "Royalty-Free AI Music",
       href: "/royalty-free-ai-music-generator",
     },
