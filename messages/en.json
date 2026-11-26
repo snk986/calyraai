@@ -231,7 +231,7 @@
       },
       "download": {
         "title": "Generate and download your AI song",
-        "description": "Generate, listen, and compare versions. Save the one you like, publish a share page, or download it on a paid plan."
+        "description": "Generate and listen to your song. Save the one you like, publish a share page, or download it on a paid plan."
       }
     },
     "benefits": {
@@ -286,12 +286,6 @@
         }
       }
     },
-    "seoBlock": {
-      "eyebrow": "AI Music Generator",
-      "title": "AI Music Generator for Creators",
-      "p1": "Calyra AI is an AI music generator designed to help creators turn prompts, lyrics, and song ideas into complete tracks. Instead of starting from a blank music project, you can describe the sound you want, choose a style, and generate music with vocals and instruments. Dedicated tools cover broad music generation, text to song prompts, and lyrics to song workflows.",
-      "p2": "Popular use cases include AI rap songs, anime openings, phonk tracks, lo-fi background music, EDM drops, emotional piano ballads, and pop songs for social content. Creators can make AI songs for YouTube videos, TikTok, Shorts, podcasts, games, ads, and personal creative projects. Subscribers can download generated songs and use them commercially, subject to our terms."
-    },
     "faq": {
       "eyebrow": "FAQ",
       "title": "Questions Before You Generate",
@@ -300,7 +294,7 @@
       "q2": "Can I try Calyra AI for free?",
       "a2": "Yes. Every new account starts with 300 free credits, enough for 3 complete songs at 100 credits each.",
       "q3": "How long does it take to make a song?",
-      "a3": "Generation runs in the background after you submit. You can keep the tab open or come back to your dashboard to check the status when the song is ready.",
+      "a3": "Most songs are typically ready in about 1-3 minutes, though it can take longer during busy periods. You can keep the tab open or come back to your dashboard to check the status.",
       "q4": "Can I turn my own lyrics into a song?",
       "a4": "Yes. In Lyrics to Song you paste your finished lyrics and add a style, and Calyra generates a complete track around them.",
       "q5": "What genres and styles can I make?",
@@ -316,7 +310,9 @@
       "q10": "How long are my songs stored?",
       "a10": "Free-account songs are stored for 30 days. Songs generated on an active Basic or Pro subscription are kept long-term.",
       "q11": "Can two AI songs sound similar?",
-      "a11": "Yes, similar prompts and styles can produce similar-sounding results. To get more distinctive tracks, vary your prompt, genre, vocal type, and instruments between generations."
+      "a11": "Yes, similar prompts and styles can produce similar-sounding results. To get more distinctive tracks, vary your prompt, genre, vocal type, and instruments between generations.",
+      "q12": "What file format and length do I get?",
+      "a12": "Paid plans download songs as MP3 files, typically around 2-3 minutes long. Exact length varies depending on your prompt and style."
     }
   },
   "seoPages": {
@@ -808,7 +804,7 @@
           },
           "song": {
             "title": "Turn lyrics into song",
-            "description": "Generate vocals and instrumental directly from your edited lyrics."
+            "description": "Generate vocals and instruments directly from your edited lyrics."
           }
         }
       },
@@ -1381,7 +1377,7 @@
     "faq": {
       "title": "Frequently Asked Questions",
       "q1": "How many credits does song generation cost? Is it worth it?",
-      "a1": "Each song costs 100 credits. Some models return 2 versions in one generation, which costs 200 credits and makes it easier to compare versions and pick the best result faster.",
+      "a1": "Each song costs 100 credits. You can generate additional songs to explore different styles or refine your result.",
       "q2": "Is payment secure? I'm worried about payment risk.",
       "a2": "Yes, absolutely. We use mainstream payment channels with bank-level encryption and risk controls. Your payment details are processed directly by the payment platform, and we cannot view or store your full payment information.",
       "q3": "How does subscription billing work? Will I forget renewals?",

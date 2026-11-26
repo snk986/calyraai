@@ -28,7 +28,7 @@ const pagePath = SEO_TOOL_PAGE_PATHS.royaltyFreeAiMusicGenerator;
 const pageTitle =
   "Royalty-Free AI Music Generator for Videos & Creators | Calyra AI";
 const pageDescription =
-  "Create royalty-free AI music for YouTube, TikTok, podcasts, games, ads, and social media. Generate songs with vocals or instrumentals for creator and commercial projects.";
+  "Create royalty-free AI music for YouTube, TikTok, podcasts, games, ads, and social media. Generate songs with vocals for creator and commercial projects.";
 
 const heroUseCases = [
   { title: "YouTube Videos", icon: Video },
@@ -113,9 +113,9 @@ const faqs = [
       "Yes. You can generate short-form music ideas for TikTok, Instagram Reels, YouTube Shorts, and social media content.",
   },
   {
-    question: "Can I generate instrumental royalty-free music?",
+    question: "Can I generate royalty-free music for videos?",
     answer:
-      "Yes. Calyra AI supports both vocal songs and instrumental music, so you can create background tracks for videos, podcasts, games, ads, and other projects.",
+      "Yes. You can create AI-generated songs with vocals and use them as background music for videos, podcasts, games, ads, and other projects according to your plan and our terms.",
   },
   {
     question: "Is royalty-free the same as copyright-free?",
@@ -195,9 +195,9 @@ export default async function RoyaltyFreeAiMusicGeneratorPage({
                 </h1>
                 <p className="mt-5 max-w-3xl text-base leading-7 text-slate-300 md:text-lg">
                   Need music you can use in creator or commercial projects?
-                  Calyra AI helps you create AI-generated songs and
-                  instrumentals for YouTube, TikTok, podcasts, games, ads, and
-                  social media - according to your plan and our terms.
+                  Calyra AI helps you create AI-generated songs for YouTube,
+                  TikTok, podcasts, games, ads, and social media - according to
+                  your plan and our terms.
                 </p>
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                   <Button asChild size="lg" className="gap-2">
@@ -257,8 +257,8 @@ export default async function RoyaltyFreeAiMusicGeneratorPage({
               </p>
               <p>
                 Calyra AI is designed to help creators turn simple music ideas,
-                lyrics, or style directions into AI-generated songs and
-                instrumentals that can support real content projects.
+                lyrics, or style directions into AI-generated songs that can
+                support real content projects.
               </p>
             </div>
           </div>
@@ -332,9 +332,9 @@ export default async function RoyaltyFreeAiMusicGeneratorPage({
               </h2>
               <p className="mt-4 text-base leading-8 text-slate-300">
                 Calyra AI helps you turn a simple idea, lyrics, or music style
-                into a complete AI-generated song or instrumental track. This
-                page is a use-case guide; actual music creation happens in the
-                existing Calyra AI tools.
+                into a complete AI-generated song. This page is a use-case
+                guide; actual music creation happens in the existing Calyra AI
+                tools.
               </p>
             </div>
             <div className="mt-7 grid gap-4 md:grid-cols-3">
@@ -433,8 +433,8 @@ export default async function RoyaltyFreeAiMusicGeneratorPage({
               Make AI music for your next creator project
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-slate-300">
-              Create songs or instrumentals for videos, podcasts, games, ads,
-              and social media with Calyra AI.
+              Create songs for videos, podcasts, games, ads, and social media
+              with Calyra AI.
             </p>
             <Button asChild size="lg" className="mt-8 gap-2">
               <Link href={songMakerHref}>

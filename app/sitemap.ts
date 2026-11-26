@@ -40,6 +40,8 @@ async function songEntries(): Promise<MetadataRoute.Sitemap> {
     .select("id,updated_at,created_at,is_featured,featured_active,total_score")
     .eq("is_public", true)
     .eq("status", "ready")
+    .not("audio_url", "is", null)
+    .or(`expires_at.is.null,expires_at.gt.${new Date().toISOString()}`)
     .or("total_score.gte.80,is_featured.eq.true")
     .order("updated_at", { ascending: false })
     .limit(500);

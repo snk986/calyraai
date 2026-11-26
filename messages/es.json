@@ -185,7 +185,7 @@
       },
       "download": {
         "title": "Genera y descarga tu canción con IA",
-        "description": "Generate, listen, and compare versions. Save the one you like, publish a share page, or download it on a paid plan."
+        "description": "Generate and listen to your song. Save the one you like, publish a share page, or download it on a paid plan."
       }
     },
     "benefits": {
@@ -240,12 +240,6 @@
         }
       }
     },
-    "seoBlock": {
-      "eyebrow": "Generador de música con IA",
-      "title": "Generador de música con IA para creadores",
-      "p1": "Calyra AI es un generador de canciones y música con IA diseñado para ayudar a los creadores a convertir indicaciones, letras e ideas en pistas completas. En lugar de empezar desde un proyecto musical vacío, puedes describir el sonido que buscas, elegir un estilo y generar música con voces e instrumentos. Usa Calyra AI como creador de canciones cuando tengas una idea simple, como herramienta de texto a canción cuando quieras describir una emoción, o como flujo de letra a canción cuando ya tengas palabras.",
-      "p2": "Los usos populares incluyen rap con IA, openings de anime, pistas phonk, música lo-fi de fondo, drops EDM, baladas emotivas de piano y canciones pop para contenido social. Los creadores pueden hacer canciones con IA para YouTube, TikTok, Shorts, podcasts, juegos, anuncios y proyectos personales. Los suscriptores pueden descargar canciones generadas y usarlas comercialmente, sujeto a nuestros términos."
-    },
     "faq": {
       "eyebrow": "Preguntas frecuentes",
       "title": "Preguntas antes de generar",
@@ -254,7 +248,7 @@
       "q2": "¿Calyra AI es un generador de música con IA gratis?",
       "a2": "Calyra AI puede ofrecer acceso gratuito o de prueba cuando esté disponible, para que pruebes ideas de canciones antes de mejorar el plan. Los planes de pago desbloquean más generación, descargas y opciones de uso comercial.",
       "q3": "¿Puedo usar comercialmente canciones generadas con IA?",
-      "a3": "Los usuarios de pago pueden descargar canciones generadas con IA y usarlas comercialmente en proyectos de creadores, contenido de negocio y distribución, con sujeción a nuestros términos.",
+      "a3": "Most songs are typically ready in about 1-3 minutes, though it can take longer during busy periods. You can keep the tab open or come back to your dashboard to check the status.",
       "q4": "¿Cuál es la diferencia entre Texto a canción y Letra a canción?",
       "a4": "Texto a canción empieza desde una idea, prompt, emoción o historia. Letra a canción empieza desde letras que ya tienes y ayuda a convertirlas en una canción con dirección de estilo y arreglo.",
       "q5": "¿Puedo crear canciones con voces?",
@@ -270,7 +264,9 @@
       "q10": "How long are my songs stored?",
       "a10": "Free-account songs are stored for 30 days. Songs generated on an active Basic or Pro subscription are kept long-term.",
       "q11": "Can two AI songs sound similar?",
-      "a11": "Yes, similar prompts and styles can produce similar-sounding results. To get more distinctive tracks, vary your prompt, genre, vocal type, and instruments between generations."
+      "a11": "Yes, similar prompts and styles can produce similar-sounding results. To get more distinctive tracks, vary your prompt, genre, vocal type, and instruments between generations.",
+      "q12": "What file format and length do I get?",
+      "a12": "Paid plans download songs as MP3 files, typically around 2-3 minutes long. Exact length varies depending on your prompt and style."
     },
     "whyChoose": {
       "eyebrow": "Why Choose Calyra",
@@ -740,7 +736,7 @@
     "faq": {
       "title": "Preguntas frecuentes",
       "q1": "Cuantos creditos cuesta generar canciones? Vale la pena?",
-      "a1": "Cada cancion cuesta 100 creditos. Algunos modelos devuelven 2 versiones en una generacion, lo que cuesta 200 creditos y ayuda a comparar versiones y elegir la mejor mas rapido.",
+      "a1": "Each song costs 100 credits. You can generate additional songs to explore different styles or refine your result.",
       "q2": "Es seguro pagar? Me preocupa el riesgo de pago.",
       "a2": "Totalmente. Usamos canales de pago principales con cifrado de nivel bancario y controles de riesgo. Tus datos de pago se procesan directamente en la plataforma de pago y no podemos ver ni guardar tu informacion completa de pago.",
       "q3": "Como funciona la suscripcion? Se renueva automaticamente?",

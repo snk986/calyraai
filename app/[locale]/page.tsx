@@ -239,6 +239,7 @@ export default async function Home({ params }: HomePageProps) {
     "q9",
     "q10",
     "q11",
+    "q12",
   ].map((key) => ({
     question: t(`faq.${key}`),
     answer: t(`faq.${key.replace("q", "a")}`),

@@ -185,7 +185,7 @@
       },
       "download": {
         "title": "生成并下载你的 AI 歌曲",
-        "description": "Generate, listen, and compare versions. Save the one you like, publish a share page, or download it on a paid plan."
+        "description": "Generate and listen to your song. Save the one you like, publish a share page, or download it on a paid plan."
       }
     },
     "benefits": {
@@ -240,12 +240,6 @@
         }
       }
     },
-    "seoBlock": {
-      "eyebrow": "AI Music Generator",
-      "title": "面向创作者的 AI 音乐生成器",
-      "p1": "Calyra AI 是 AI song generator 和 AI music generator，帮助创作者把提示词、歌词和歌曲想法变成完整曲目。你可以描述想要的声音、选择风格，并生成带人声和乐器的音乐。",
-      "p2": "常见用途包括 AI rap、anime opening、phonk、lo-fi 背景音乐、EDM drop、情绪钢琴 ballad 和社交内容 pop 歌曲。创作者可为 YouTube、TikTok、Shorts、播客、游戏、广告和个人项目制作 AI 歌曲。"
-    },
     "faq": {
       "eyebrow": "FAQ",
       "title": "生成前的常见问题",
@@ -254,7 +248,7 @@
       "q2": "Calyra AI 是免费的 AI music generator 吗？",
       "a2": "如果当前提供免费或试用入口，你可以先测试歌曲想法。付费计划会解锁更多生成、下载和商用选项。",
       "q3": "AI 生成歌曲可以商用吗？",
-      "a3": "付费用户可以下载 AI 生成歌曲，并在我们的条款约束下，将其用于创作者项目、商业内容和发行。",
+      "a3": "Most songs are typically ready in about 1-3 minutes, though it can take longer during busy periods. You can keep the tab open or come back to your dashboard to check the status.",
       "q4": "Text to Song 和 Lyrics to Song 有什么区别？",
       "a4": "Text to Song 从想法、提示词、情绪或故事开始。Lyrics to Song 从你已有的歌词开始，再加入风格和编曲方向，把歌词发展成歌曲。",
       "q5": "可以制作带人声的歌曲吗？",
@@ -270,7 +264,9 @@
       "q10": "How long are my songs stored?",
       "a10": "Free-account songs are stored for 30 days. Songs generated on an active Basic or Pro subscription are kept long-term.",
       "q11": "Can two AI songs sound similar?",
-      "a11": "Yes, similar prompts and styles can produce similar-sounding results. To get more distinctive tracks, vary your prompt, genre, vocal type, and instruments between generations."
+      "a11": "Yes, similar prompts and styles can produce similar-sounding results. To get more distinctive tracks, vary your prompt, genre, vocal type, and instruments between generations.",
+      "q12": "What file format and length do I get?",
+      "a12": "Paid plans download songs as MP3 files, typically around 2-3 minutes long. Exact length varies depending on your prompt and style."
     },
     "whyChoose": {
       "eyebrow": "Why Choose Calyra",
@@ -740,7 +736,7 @@
     "faq": {
       "title": "常见问题",
       "q1": "生成歌曲要多少积分？划算吗？",
-      "a1": "每首歌曲消耗 100 积分。部分模型一次生成会返回 2 个版本，这种情况下消耗 200 积分，方便快速对比并选择最佳结果。",
+      "a1": "Each song costs 100 credits. You can generate additional songs to explore different styles or refine your result.",
       "q2": "付款安全吗？我担心支付风险",
       "a2": "完全可以放心。我们使用主流支付通道，采用银行级加密与风控体系。支付信息由支付平台安全处理，我们无法看到或保存你的完整支付数据。",
       "q3": "订阅怎么收费？会不会忘记续费？",
