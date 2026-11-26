@@ -38,6 +38,12 @@ export function Footer() {
       label: t("christmasSongGenerator"),
       href: "/christmas-song-generator",
     },
+    { label: t("aiRapGenerator"), href: "/ai-rap-generator" },
+    { label: t("rapLyricsGenerator"), href: "/rap-lyrics-generator" },
+    {
+      label: t("aiParodySongGenerator"),
+      href: "/ai-parody-song-generator",
+    },
     {
       label: "Royalty-Free AI Music",
       href: "/royalty-free-ai-music-generator",

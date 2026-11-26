@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Link from "next/link";
 import {
   CheckCircle2,
   Music2,
@@ -16,6 +17,11 @@ interface ToolPageFaq {
   answer: string;
 }
 
+interface ToolPageRelatedLink {
+  label: string;
+  href: string;
+}
+
 interface SeoToolPageProps {
   eyebrow: string;
   title: string;
@@ -31,6 +37,8 @@ interface SeoToolPageProps {
   steps: ToolPageCard[];
   faqTitle: string;
   faqs: ToolPageFaq[];
+  relatedTitle?: string;
+  relatedLinks?: ToolPageRelatedLink[];
 }
 
 const icons = [Sparkles, Music2, Search];
@@ -50,6 +58,8 @@ export function SeoToolPage({
   steps,
   faqTitle,
   faqs,
+  relatedTitle,
+  relatedLinks,
 }: SeoToolPageProps) {
   return (
     <div className="bg-background">
@@ -154,6 +164,27 @@ export function SeoToolPage({
           </div>
         </div>
       </section>
+
+      {relatedLinks && relatedLinks.length > 0 ? (
+        <section className="border-t py-12 md:py-16">
+          <div className="container px-4 md:px-6">
+            <h2 className="text-3xl font-bold tracking-normal md:text-4xl">
+              {relatedTitle ?? "Keep exploring"}
+            </h2>
+            <div className="mt-6 flex flex-wrap gap-3">
+              {relatedLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="rounded-full border bg-card px-4 py-2 text-sm text-muted-foreground transition hover:border-primary hover:text-primary"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
     </div>
   );
 }

@@ -163,6 +163,13 @@ export default async function AiBirthdaySongGeneratorPage({
         }))}
         faqTitle={t("faq.title")}
         faqs={faqs}
+        relatedTitle={t("related.title")}
+        relatedLinks={[
+          {
+            label: t("related.christmas"),
+            href: SEO_TOOL_PAGE_PATHS.christmasSongGenerator,
+          },
+        ]}
       />
     </>
   );

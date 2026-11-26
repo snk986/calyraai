@@ -21,7 +21,9 @@ interface SeoSongStartFormProps {
     titlePlaceholder: string;
     titleDefault: string;
     submit: string;
+    exampleLabel?: string;
   };
+  examples?: { label: string; prompt: string }[];
 }
 
 function localizedSongMakerPath(locale: string, mode: SongStartMode) {
@@ -31,7 +33,11 @@ function localizedSongMakerPath(locale: string, mode: SongStartMode) {
   return `${prefix}${path}`;
 }
 
-export function SeoSongStartForm({ mode, labels }: SeoSongStartFormProps) {
+export function SeoSongStartForm({
+  mode,
+  labels,
+  examples,
+}: SeoSongStartFormProps) {
   const router = useRouter();
   const locale = useLocale() as Locale;
   const [prompt, setPrompt] = useState("");
@@ -61,6 +67,26 @@ export function SeoSongStartForm({ mode, labels }: SeoSongStartFormProps) {
           required
         />
       </div>
+
+      {examples && examples.length > 0 ? (
+        <div className="mt-4">
+          <p className="text-xs font-medium text-muted-foreground">
+            {labels.exampleLabel ?? "Try an example idea:"}
+          </p>
+          <div className="mt-2 flex flex-wrap gap-2">
+            {examples.map((example) => (
+              <button
+                key={example.label}
+                type="button"
+                onClick={() => setPrompt(example.prompt)}
+                className="rounded-full border border-border bg-background px-3 py-1.5 text-xs text-muted-foreground transition hover:border-primary hover:text-primary"
+              >
+                {example.label}
+              </button>
+            ))}
+          </div>
+        </div>
+      ) : null}
 
       <div className="mt-4 grid gap-3 md:grid-cols-2">
         <label className="text-sm font-medium text-foreground">

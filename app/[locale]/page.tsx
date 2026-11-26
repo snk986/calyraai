@@ -23,6 +23,7 @@ import {
   PenLine,
   Play,
   Radio,
+  Snowflake,
   Sparkles,
   Star,
   Youtube,
@@ -188,6 +189,12 @@ export default async function Home({ params }: HomePageProps) {
       title: t("styles.anime.title"),
       description: t("styles.anime.description"),
       href: "/ai-song-maker",
+    },
+    {
+      icon: Snowflake,
+      title: t("styles.christmas.title"),
+      description: t("styles.christmas.description"),
+      href: "/christmas-song-generator",
     },
   ];
 

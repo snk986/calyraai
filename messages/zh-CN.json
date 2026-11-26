@@ -43,7 +43,10 @@
     "aiBirthdaySongGenerator": "AI 生日歌生成器",
     "aiSongMaker": "AI Song Maker",
     "worldCupSongGenerator": "世界杯歌曲生成器",
-    "christmasSongGenerator": "Christmas Song Generator"
+    "christmasSongGenerator": "Christmas Song Generator",
+    "aiRapGenerator": "AI Rap Generator",
+    "rapLyricsGenerator": "Rap Lyrics Generator",
+    "aiParodySongGenerator": "AI Parody Song Generator"
   },
   "home": {
     "seo": {
@@ -121,6 +124,10 @@
       "anime": {
         "title": "AI Anime Song",
         "description": "生成动漫 OP、J-pop rock 和明亮副歌灵感。"
+      },
+      "christmas": {
+        "title": "Christmas Song Generator",
+        "description": "Make a personalized holiday song with a name and a festive style."
       }
     },
     "templates": {
@@ -1406,6 +1413,10 @@
           "question": "生成的生日歌可以用于视频吗？",
           "answer": "你可以根据自己的计划和 Calyra AI 条款，为生日视频、家庭祝福和社交媒体内容生成歌曲。"
         }
+      },
+      "related": {
+        "title": "Keep exploring",
+        "christmas": "Christmas Song Generator"
       }
     },
     "aiLyricsGenerator": {
@@ -1621,6 +1632,335 @@
           "songMaker": "AI Song Maker",
           "textToSong": "Text to Song",
           "lyricsToSong": "Lyrics to Song",
+          "home": "Calyra AI home"
+        }
+      }
+    },
+    "aiRapGenerator": {
+      "seo": {
+        "title": "AI Rap Generator: Create Rap Songs from Text | Calyra AI",
+        "description": "Generate original rap songs from text prompts. Set the flow, beat, and vocal style to create a complete rap track with verses and a hook."
+      },
+      "hero": {
+        "eyebrow": "AI Rap Generator",
+        "title": "AI Rap Generator",
+        "description": "Turn a line, a mood, or a story into a complete rap song. Describe the topic, pick the energy, and set the flow and vocal character. Calyra AI prepares an original rap track with verses, a hook, and a beat that matches the direction you choose. Use it for a demo, a content video, a challenge, or just to hear your idea as a real song."
+      },
+      "cta": {
+        "secondary": "Try AI Song Maker"
+      },
+      "form": {
+        "prompt": "Rap idea or topic",
+        "placeholder": "Describe the topic, mood, and delivery. For example: a confident boom-bap track about chasing a goal and never giving up.",
+        "style": "Rap style",
+        "stylePlaceholder": "Beat, tempo, and vocal character",
+        "styleDefault": "Rap, punchy hook, confident flow, hard-hitting drums",
+        "title": "Title",
+        "titlePlaceholder": "Give your rap a title",
+        "titleDefault": "My Rap",
+        "submit": "Create Rap Song",
+        "exampleLabel": "Try an example idea:"
+      },
+      "examples": {
+        "motivation": {
+          "label": "Motivation",
+          "prompt": "A high-energy motivational rap about starting over and proving the doubters wrong, with a driving beat and a strong repeated hook."
+        },
+        "story": {
+          "label": "Storytelling",
+          "prompt": "A storytelling rap about growing up in a small town, told in three verses that move from struggle to success, over a smooth mid-tempo beat."
+        },
+        "freestyle": {
+          "label": "Party track",
+          "prompt": "An upbeat party rap with a bouncy rhythm, quick wordplay, and a call-and-response hook made to get a crowd moving."
+        }
+      },
+      "benefits": {
+        "title": "Write a Rap That Sounds Like You",
+        "description": "A rap works when the topic, flow, and vocal all pull in the same direction. Use these cues to shape the result instead of leaving it to chance.",
+        "items": {
+          "topic": {
+            "title": "Pick a clear topic",
+            "description": "Give the rap a subject, a point of view, and an emotion. A specific idea produces more focused verses than a single vague word."
+          },
+          "flow": {
+            "title": "Describe the flow",
+            "description": "Say whether you want fast double-time delivery, a laid-back pocket, or a melodic sing-song flow, and name the beat and tempo."
+          },
+          "hook": {
+            "title": "Shape the hook",
+            "description": "Tell Calyra AI what the chorus should feel like, whether it is a chant, a melody, or a repeated phrase that sticks after one listen."
+          }
+        }
+      },
+      "steps": {
+        "title": "How to Make a Rap Song with Calyra AI",
+        "description": "Start with an idea and a style, then continue into the song generator to finish the track.",
+        "items": {
+          "idea": {
+            "title": "Describe the rap",
+            "description": "Write the topic, mood, and point of view, then choose a delivery and a beat so the verses and hook match your intention."
+          },
+          "style": {
+            "title": "Set the flow and vocal",
+            "description": "Pick the energy, tempo, and vocal character, and add details like a punchy hook or a smooth verse delivery."
+          },
+          "generate": {
+            "title": "Generate and use your track",
+            "description": "Continue to the AI text to song workflow to generate the full rap, then use it for a demo, a video, or a content project."
+          }
+        }
+      },
+      "faq": {
+        "title": "AI Rap Generator FAQ",
+        "one": {
+          "question": "Can I choose the rap style and flow?",
+          "answer": "Yes. Describe the beat, tempo, and delivery in the style field, such as a boom-bap flow, a trap beat, or a melodic hook, and Calyra AI uses those cues."
+        },
+        "two": {
+          "question": "Does the rap include a hook and verses?",
+          "answer": "Yes. The generated rap song is a full track with verses and a hook, arranged around the topic and style you describe."
+        },
+        "three": {
+          "question": "Can I write my own lyrics?",
+          "answer": "Yes. If you already have words, use Lyrics to Song to turn your own lyrics into a complete rap track with a beat and vocals."
+        },
+        "four": {
+          "question": "Is the rap original?",
+          "answer": "Calyra AI generates original lyrics and music. It does not copy the lyrics of existing songs, so describe your own topic and message in the prompt."
+        },
+        "five": {
+          "question": "Is it free to start?",
+          "answer": "Yes. Every new account starts with 300 free credits, enough for 3 complete songs. Downloading and commercial use require a paid plan."
+        }
+      },
+      "breadcrumb": {
+        "home": "Home",
+        "current": "AI Rap Generator"
+      },
+      "related": {
+        "title": "Keep exploring",
+        "links": {
+          "rapLyrics": "Rap Lyrics Generator",
+          "lyricsToSong": "Lyrics to Song",
+          "songMaker": "AI Song Maker",
+          "home": "Calyra AI home"
+        }
+      }
+    },
+    "rapLyricsGenerator": {
+      "seo": {
+        "title": "Rap Lyrics Generator: Write Verses and Hooks | Calyra AI",
+        "description": "Write original rap lyrics with verses and hooks. Describe your topic and style to generate rhymes, then turn your lyrics into a full song."
+      },
+      "hero": {
+        "eyebrow": "Rap Lyrics Generator",
+        "title": "Rap Lyrics Generator",
+        "description": "Get original rap lyrics without starting from a blank page. Describe your topic, mood, and delivery, and Calyra AI writes verses, a hook, and rhyme schemes you can edit. When the words feel right, turn them into a full rap song with a beat and vocals."
+      },
+      "cta": {
+        "secondary": "Turn lyrics into a song"
+      },
+      "form": {
+        "prompt": "Lyrics idea or topic",
+        "placeholder": "Describe the topic, mood, and rhyme style. For example: a bragging-style rap about leveling up, with tight internal rhymes and a catchy repeated hook.",
+        "style": "Style",
+        "stylePlaceholder": "Tone, rhyme scheme, and structure",
+        "styleDefault": "Rap lyrics, tight rhymes, punchy hook, confident tone",
+        "title": "Title",
+        "titlePlaceholder": "Give your lyrics a title",
+        "titleDefault": "My Rap",
+        "submit": "Generate Rap Lyrics",
+        "submitting": "Writing lyrics...",
+        "signInTitle": "Sign in to generate lyrics",
+        "signInDescription": "Create an account to generate and save your rap lyrics.",
+        "signInCta": "Sign in",
+        "errorFallback": "Something went wrong while generating lyrics. Please try again.",
+        "resultEyebrow": "Your lyrics",
+        "lyricsLabel": "Edit your lyrics",
+        "turnIntoSong": "Turn lyrics into a song"
+      },
+      "benefits": {
+        "title": "Write Verses, Hooks, and Rhymes That Land",
+        "description": "Strong rap lyrics need a clear topic, a rhythm you can hear, and a hook that sticks. Use these directions to get lines that are easy to perform and edit.",
+        "items": {
+          "rhyme": {
+            "title": "Shape the rhyme scheme",
+            "description": "Ask for internal rhymes, end rhymes, or multi-syllable rhymes, and say whether you want a fast pattern or a smoother, drawn-out flow."
+          },
+          "structure": {
+            "title": "Build the structure",
+            "description": "Tell Calyra AI how many verses you want and where the hook repeats, so the lyrics follow a shape you can actually record or perform."
+          },
+          "voice": {
+            "title": "Set the voice",
+            "description": "Describe the point of view and tone, whether it is confident, reflective, funny, or aggressive, so the words sound like the character you want."
+          }
+        }
+      },
+      "steps": {
+        "title": "How to Write Rap Lyrics with Calyra AI",
+        "description": "Start from a topic and a style, then refine the words and carry them into the song generator.",
+        "items": {
+          "brief": {
+            "title": "Describe the lyrics",
+            "description": "Write the topic, mood, and point of view, then add the rhyme style and structure you want for the verses and hook."
+          },
+          "review": {
+            "title": "Review and edit",
+            "description": "Read the generated lyrics, rewrite any line, and adjust the hook until the words match your intention and rhythm."
+          },
+          "song": {
+            "title": "Turn the words into a song",
+            "description": "When the lyrics feel right, use Turn lyrics into a song to generate a full rap track with a beat and vocals around your words."
+          }
+        }
+      },
+      "faq": {
+        "title": "Rap Lyrics Generator FAQ",
+        "one": {
+          "question": "Does this write the lyrics or make the whole song?",
+          "answer": "This page writes the lyrics. You get verses and a hook you can edit. To add a beat and vocals, use Turn lyrics into a song to generate the full track."
+        },
+        "two": {
+          "question": "Can I edit the lyrics after they are generated?",
+          "answer": "Yes. The lyrics appear in an editor where you can rewrite lines, change the hook, and adjust the structure before you turn them into a song."
+        },
+        "three": {
+          "question": "Are the lyrics original?",
+          "answer": "Yes. Calyra AI generates original lyrics. It does not copy the words of existing songs, so describe your own topic and message in the prompt."
+        },
+        "four": {
+          "question": "What should I include in the prompt?",
+          "answer": "Include the topic, mood, point of view, and rhyme style. For example: a confident track about bouncing back, with a punchy hook and tight end rhymes."
+        },
+        "five": {
+          "question": "Is it free to start?",
+          "answer": "Yes. Every new account starts with 300 free credits, enough for 3 complete songs. Downloading and commercial use require a paid plan."
+        }
+      },
+      "breadcrumb": {
+        "home": "Home",
+        "current": "Rap Lyrics Generator"
+      },
+      "related": {
+        "title": "Keep exploring",
+        "links": {
+          "rapGenerator": "AI Rap Generator",
+          "lyricsToSong": "Lyrics to Song",
+          "songMaker": "AI Song Maker",
+          "home": "Calyra AI home"
+        }
+      }
+    },
+    "aiParodySongGenerator": {
+      "seo": {
+        "title": "AI Parody Song Generator: Funny Songs from Text | Calyra AI",
+        "description": "Create original funny parody songs from text. Describe a topic and style to generate original lyrics and music, without copying any existing song."
+      },
+      "hero": {
+        "eyebrow": "AI Parody Song Generator",
+        "title": "AI Parody Song Generator",
+        "description": "Make a funny song from your own idea. Describe the subject you want to poke fun at, the tone, and the musical style, and Calyra AI writes an original parody with fresh lyrics and music. It generates original words and a new tune, so it does not copy the lyrics or melody of any existing song."
+      },
+      "cta": {
+        "secondary": "Try AI Song Maker"
+      },
+      "form": {
+        "prompt": "Parody idea or topic",
+        "placeholder": "Describe what to parody and the tone. For example: a cheerful pop song about a very serious meeting that could have been an email.",
+        "style": "Musical style",
+        "stylePlaceholder": "Genre, tempo, and vocal character",
+        "styleDefault": "Funny pop, playful vocal, upbeat tempo, comedic lyrics",
+        "title": "Title",
+        "titlePlaceholder": "Give your parody a title",
+        "titleDefault": "My Parody Song",
+        "submit": "Create Parody Song",
+        "exampleLabel": "Try an example idea:"
+      },
+      "examples": {
+        "office": {
+          "label": "Office life",
+          "prompt": "A light pop parody about a meeting that could have been an email, with a bouncy beat and a tongue-in-cheek chorus about endless slides."
+        },
+        "monday": {
+          "label": "Monday morning",
+          "prompt": "A dramatic ballad parody about the pain of a Monday morning alarm, with an over-the-top emotional chorus and a deadpan verse."
+        },
+        "diet": {
+          "label": "Diet struggles",
+          "prompt": "A country-style parody about trying to eat healthy while a plate of fries keeps calling your name, with a humorous storytelling verse."
+        }
+      },
+      "benefits": {
+        "title": "Write a Parody That Is Funny and Original",
+        "description": "A good parody makes fun of a familiar situation without copying someone else's song. Use these directions to keep it funny, specific, and yours.",
+        "items": {
+          "subject": {
+            "title": "Pick a specific target",
+            "description": "Choose one clear subject to joke about, like a habit, a place, or a daily annoyance, so the humor stays focused and the lines land."
+          },
+          "tone": {
+            "title": "Set the comedic tone",
+            "description": "Say whether you want light and silly, dry and sarcastic, or over-the-top dramatic, and pick a musical style that makes the joke funnier."
+          },
+          "original": {
+            "title": "Keep it original",
+            "description": "Calyra AI writes new lyrics and a new tune for your topic. It does not copy the words or melody of an existing song, so write your own angle."
+          }
+        }
+      },
+      "steps": {
+        "title": "How to Make a Parody Song with Calyra AI",
+        "description": "Start with a funny idea and a style, then continue into the song generator to finish the track.",
+        "items": {
+          "idea": {
+            "title": "Describe the joke",
+            "description": "Write the subject, the tone, and the punchline direction, and pick a musical style that supports the humor you want."
+          },
+          "style": {
+            "title": "Choose the sound",
+            "description": "Set the genre, tempo, and vocal character, then add details like a playful delivery or a dramatic build for comedic effect."
+          },
+          "generate": {
+            "title": "Generate and share",
+            "description": "Continue to the AI text to song workflow to generate the full parody, then use it for a video, a skit, or a content project."
+          }
+        }
+      },
+      "faq": {
+        "title": "AI Parody Song Generator FAQ",
+        "one": {
+          "question": "Does it copy an existing song's lyrics?",
+          "answer": "No. Calyra AI generates original lyrics and music for your topic. It does not reproduce the lyrics or melody of any existing song, so describe your own idea and angle."
+        },
+        "two": {
+          "question": "Can I choose the musical style?",
+          "answer": "Yes. Pick a genre like pop, country, or a dramatic ballad, and describe the vocal character and tempo to make the joke land the way you want."
+        },
+        "three": {
+          "question": "Can I make it about a person or a brand?",
+          "answer": "You can describe the subject, but you are responsible for what you write and how you use it. Keep the content appropriate and follow platform rules."
+        },
+        "four": {
+          "question": "Can I use the parody in a video?",
+          "answer": "Yes. You can use the song for your content according to your plan and Calyra AI Terms. Downloading and commercial use require a paid plan."
+        },
+        "five": {
+          "question": "Is it free to start?",
+          "answer": "Yes. Every new account starts with 300 free credits, enough for 3 complete songs. Downloading and commercial use require a paid plan."
+        }
+      },
+      "breadcrumb": {
+        "home": "Home",
+        "current": "AI Parody Song Generator"
+      },
+      "related": {
+        "title": "Keep exploring",
+        "links": {
+          "rapGenerator": "AI Rap Generator",
+          "lyricsToSong": "Lyrics to Song",
+          "songMaker": "AI Song Maker",
           "home": "Calyra AI home"
         }
       }
