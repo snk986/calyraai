@@ -42,7 +42,7 @@ const heroUseCases = [
 const useCases = [
   {
     title: "YouTube Videos",
-    description: "Background music, intro tracks, outro music, and creator videos.",
+    description: "Songs for intro tracks, outro music, and creator videos.",
     icon: Video,
   },
   {
@@ -57,7 +57,7 @@ const useCases = [
   },
   {
     title: "Games",
-    description: "Background music for indie games, trailers, and demos.",
+    description: "Songs for indie game trailers, demos, and stream content.",
     icon: Gamepad2,
   },
   {
@@ -105,7 +105,7 @@ const faqs = [
   {
     question: "Can I use Calyra AI music on YouTube?",
     answer:
-      "Yes, you can create AI music for YouTube videos, intros, outros, background music, and creator content according to your plan and our terms.",
+      "Yes, you can create AI songs for YouTube videos, intros, outros, and creator content according to your plan and our terms.",
   },
   {
     question: "Can I use the music for TikTok, Instagram, and Shorts?",
@@ -115,7 +115,7 @@ const faqs = [
   {
     question: "Can I generate royalty-free music for videos?",
     answer:
-      "Yes. You can create AI-generated songs with vocals and use them as background music for videos, podcasts, games, ads, and other projects according to your plan and our terms.",
+      "Yes. You can create AI-generated songs with vocals and use them in videos, podcasts, games, ads, and other projects according to your plan and our terms.",
   },
   {
     question: "Is royalty-free the same as copyright-free?",
