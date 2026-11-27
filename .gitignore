@@ -56,3 +56,4 @@ scripts/featured-gallery.local.json
 
 # local marketing video exports
 /public/marketing/*.mp4
+.workbuddy/
